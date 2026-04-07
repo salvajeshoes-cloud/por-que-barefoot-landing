@@ -69,7 +69,7 @@ img{display:block;max-width:100%}
 .prob-card h3{font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:10px;line-height:1.2;color:#1a1a1a}
 .prob-card p{font-size:13px;color:#777;line-height:1.65}
 .prob-consequence{margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #e07070;border-radius:0 6px 6px 0;font-size:12px;color:#c0392b;font-weight:600;line-height:1.4}
-/* CARRUSEL */
+/* CARRUSEL GENÉRICO */
 .carousel-wrap{position:relative;margin-top:40px}
 .carousel-track{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .carousel-dots{display:none;justify-content:center;gap:8px;margin-top:20px}
@@ -156,8 +156,8 @@ img{display:block;max-width:100%}
 .btn-big-green{background:#4a9972;color:#fff;padding:16px 40px;font-size:14px;font-weight:800;border:none;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:.02em;transition:background .2s;white-space:nowrap;display:inline-block;text-transform:uppercase;border-radius:28px}
 .btn-big-green:hover{background:#3a8060}
 .cta-trust-line{font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.04em;text-align:right}
-/* PRODUCTOS GRID */
-.productos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* PRODUCTOS — carrusel desktop: 3 columnas, mobile: 1 a la vez */
+.productos-track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .prod-card{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;display:block;transition:box-shadow .2s}
 .prod-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.1)}
 .prod-img{aspect-ratio:1;overflow:hidden;background:#f0f0f0;position:relative;display:flex;align-items:center;justify-content:center}
@@ -197,20 +197,6 @@ img{display:block;max-width:100%}
 .faq-a.open{display:block}
 .faq-a p{font-size:14px;color:#555;line-height:1.8}
 .faq-a a{color:#4a9972;font-weight:600}
-/* STICKY — oculto hasta mitad de página */
-.sticky-bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #4a9972;padding:13px 60px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:199;box-shadow:0 -4px 24px rgba(0,0,0,.06);transform:translateY(100%);transition:transform .35s ease}
-.sticky-bottom.visible{transform:translateY(0)}
-.sb-left{font-size:14px;color:#666}
-.sb-left strong{color:#1a1a1a;font-weight:700}
-.sb-btn{background:#4a9972;color:#fff;padding:12px 32px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .2s;white-space:nowrap;border-radius:24px}
-.sb-btn:hover{background:#3a8060}
-/* FOOTER */
-.footer{background:#1a1a1a;padding:36px 60px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:12px;color:#555;transition:color .2s}
-.footer-links a:hover{color:#fff}
-.footer-legal{font-size:11px;color:#444}
 /* RESPONSIVE */
 @media(max-width:960px){
   .header{padding:14px 20px}
@@ -220,13 +206,20 @@ img{display:block;max-width:100%}
   .edu-section{padding:52px 24px}
   .intro-descalzo{padding:48px 24px}
   .intro-desc-grid{grid-template-columns:1fr;gap:28px}
+  /* carrusel problemas */
   .carousel-track{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
   .carousel-track::-webkit-scrollbar{display:none}
   .carousel-track .prob-card{min-width:78vw;max-width:78vw;scroll-snap-align:start;flex-shrink:0}
   .carousel-dots{display:flex}
+  /* carrusel mitos */
   .mitos-grid{display:flex;overflow-x:auto;gap:20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .mitos-grid::-webkit-scrollbar{display:none}
   .mitos-grid .mito-card{min-width:82vw;max-width:82vw;scroll-snap-align:start;flex-shrink:0}
+  /* carrusel productos */
+  .productos-track{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+  .productos-track::-webkit-scrollbar{display:none}
+  .productos-track .prod-card{min-width:78vw;max-width:78vw;scroll-snap-align:start;flex-shrink:0}
+  .prod-dots{display:flex}
   .como-inner{grid-template-columns:1fr;gap:36px}
   .res-top{grid-template-columns:1fr;max-width:340px}
   .reviews-scroll{grid-template-columns:1fr}
@@ -235,31 +228,13 @@ img{display:block;max-width:100%}
   .cta-mid{padding:44px 24px;flex-direction:column;gap:24px}
   .cta-mid-right{align-items:flex-start}
   .cta-final{padding:52px 24px}
-  .productos-grid{grid-template-columns:1fr 1fr}
-  .footer{padding:32px 20px 80px;flex-direction:column;align-items:flex-start}
-  /* sticky mobile: solo botón, texto oculto */
-  .sticky-bottom{padding:12px 20px}
-  .sb-left{display:none}
-  .sb-btn{width:100%;text-align:center;font-size:15px;padding:14px}
 }
 @media(max-width:600px){
   .ugc-strip{grid-template-columns:repeat(3,1fr)}
-  .productos-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
-<nav class="progress-nav" id="progress-nav">
-  <div class="pn-item active" onclick="scrollTo('descalzo')"><span class="pn-num">01</span>¿Qué es barefoot?</div>
-  <div class="pn-item" onclick="scrollTo('problema')"><span class="pn-num">02</span>El problema</div>
-  <div class="pn-item" onclick="scrollTo('como')"><span class="pn-num">03</span>Cómo funciona</div>
-  <div class="pn-item" onclick="scrollTo('resultados')"><span class="pn-num">04</span>Resultados</div>
-  <div class="pn-item" onclick="scrollTo('mitos')"><span class="pn-num">05</span>Mitos y realidad</div>
-  <div class="pn-item" onclick="scrollTo('paraquien')"><span class="pn-num">06</span>¿Para quién?</div>
-  <div class="pn-item" onclick="scrollTo('ver-modelos')"><span class="pn-num">07</span>Ver modelos</div>
-  <div class="pn-item" onclick="scrollTo('faq')"><span class="pn-num">08</span>Preguntas</div>
-</nav>
 
 <!-- HERO -->
 <section class="hero-edu">
@@ -391,15 +366,15 @@ img{display:block;max-width:100%}
   </div>
 </section>
 
-<!-- UGC STRIP — fotos reales de clientes -->
+<!-- UGC -->
 <div class="ugc-strip">
-  <img src="fotos/ugc1.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#edf7f2';this.style.minHeight='80px'">
-  <img src="fotos/ugc2.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#dff0e8';this.style.minHeight='80px'">
-  <img src="fotos/ugc3.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#d0ead8';this.style.minHeight='80px'">
-  <img src="fotos/ugc4.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#c8e4d0';this.style.minHeight='80px'">
-  <img src="fotos/ugc5.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#b8d8c8';this.style.minHeight='80px'">
-  <img src="fotos/ugc6.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#a8d0c0';this.style.minHeight='80px'">
-  <img src="fotos/ugc7.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#98c8b8';this.style.minHeight='80px'">
+  <img src="fotos/ugc1.jpg" alt="" onerror="this.style.background='#edf7f2';this.style.minHeight='80px'">
+  <img src="fotos/ugc2.jpg" alt="" onerror="this.style.background='#dff0e8';this.style.minHeight='80px'">
+  <img src="fotos/ugc3.jpg" alt="" onerror="this.style.background='#d0ead8';this.style.minHeight='80px'">
+  <img src="fotos/ugc4.jpg" alt="" onerror="this.style.background='#c8e4d0';this.style.minHeight='80px'">
+  <img src="fotos/ugc5.jpg" alt="" onerror="this.style.background='#b8d8c8';this.style.minHeight='80px'">
+  <img src="fotos/ugc6.jpg" alt="" onerror="this.style.background='#a8d0c0';this.style.minHeight='80px'">
+  <img src="fotos/ugc7.jpg" alt="" onerror="this.style.background='#98c8b8';this.style.minHeight='80px'">
 </div>
 
 <!-- 05 MITOS -->
@@ -410,10 +385,10 @@ img{display:block;max-width:100%}
   <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8">¿Y si el soporte que creías necesitar es lo que te está debilitando? Olvidate de los mitos y deja que tus pies vuelvan a ser tu guía. Tu cuerpo conoce el camino.</p>
   <div class="carousel-wrap" style="margin-top:40px">
     <div class="mitos-grid" id="mitos-track">
-      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dd-1210-7cce-a6a8-90d26ba421fb.jpg" alt="mito 1" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #1</div><h3>"El pie necesita soporte de arco"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>El arco del pie es un sistema muscular dinámico. El soporte artificial le saca el trabajo al arco, lo debilita y crea dependencia. El calzado barefoot restaura la función natural para fortalecer los arcos y aliviar la fascitis plantar.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
-      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43db-9b42-7cce-a6a8-79c155be10f7.jpg" alt="mito 2" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #2</div><h3>"Es malo para pies planos"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Los pies planos frecuentemente son consecuencia del calzado convencional. El calzado barefoot permite que tu arco y músculos se desarrollen libremente, desbloqueando tu movimiento natural. No necesitás plantillas.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
-      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dc-2f43-7cce-a6a8-81fa6706588a.jpg" alt="mito 3" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #3</div><h3>"Las suelas finas me dolerán"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Nuestras suelas te protegen de superficies duras mientras te dejan sentir el suelo. Los primeros días puede haber adaptación — es el pie activando músculos dormidos. Una transición gradual despertará tus pies sin dolor.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
-      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/d900a81c-0e6e-45f6-b82e-9307a89580f5-92c2468c3d18f04a8b17437886165412-1024-1024.webp" alt="mito 4" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #4</div><h3>"El barefoot limita el rendimiento"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Promueve el equilibrio natural y la fuerza desde la base. Desde el yoga hasta el levantamiento de pesas, personas de todas las edades entrenan y mejoran usando barefoot. La transición activa músculos que el calzado convencional mantuvo dormidos durante años.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/03a1e021-2609-41c9-9392-1bd36fddf7bc-911380782d27a1ea2517437886161444-1024-1024.webp" alt="mito 1"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #1</div><h3>"El pie necesita soporte de arco"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>El arco del pie es un sistema muscular dinámico. El soporte artificial le saca el trabajo al arco, lo debilita y crea dependencia. El calzado barefoot restaura la función natural para fortalecer los arcos y aliviar la fascitis plantar.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/69c7de37-4948-4da4-9b90-869d4585d0ac-82406542d128b316f017437886165300-1024-1024.webp" alt="mito 2"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #2</div><h3>"Es malo para pies planos"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Los pies planos frecuentemente son consecuencia del calzado convencional. El calzado barefoot permite que tu arco y músculos se desarrollen libremente, desbloqueando tu movimiento natural. No necesitás plantillas.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/d4f53915-4dff-4a40-a929-5a0de337508f-4ddbec3a8b8519e01b17437886169214-1024-1024.webp" alt="mito 3"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #3</div><h3>"Las suelas finas me dolerán"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Nuestras suelas te protegen de superficies duras mientras te dejan sentir el suelo. Los primeros días puede haber adaptación — es el pie activando músculos dormidos. Una transición gradual despertará tus pies sin dolor.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/d900a81c-0e6e-45f6-b82e-9307a89580f5-92c2468c3d18f04a8b17437886165412-1024-1024.webp" alt="mito 4"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #4</div><h3>"El barefoot limita el rendimiento"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Promueve el equilibrio natural y la fuerza desde la base. Desde el yoga hasta el levantamiento de pesas, personas de todas las edades entrenan y mejoran usando barefoot. La transición activa músculos que el calzado convencional mantuvo dormidos durante años.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
     </div>
     <div class="carousel-dots" id="mitos-dots" style="margin-top:20px;display:none">
       <button class="carousel-dot active" onclick="goToMito(0)"></button>
@@ -442,121 +417,123 @@ img{display:block;max-width:100%}
   </div>
 </section>
 
-<!-- 07 VER MODELOS -->
+<!-- 07 VER MODELOS — CARRUSEL -->
 <section class="edu-section" id="ver-modelos" style="background:#f9f9f9">
   <div class="section-eyebrow">07 · Por dónde empezar</div>
   <h2 class="section-h2">ELEGÍ TU PRIMER PAR SALVAJE</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8;margin-bottom:40px">Todos los modelos tienen cambio gratis y cuotas sin interés. Si no sabés por cuál empezar, estos son los más elegidos:</p>
-  <div class="productos-grid">
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8;margin-bottom:0">Todos los modelos tienen cambio gratis y cuotas sin interés.</p>
 
-    <!-- Aero White -->
-    <a href="https://www.salvajeshoes.com.ar/productos/aero-white/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-white-480-0.webp" alt="Aero White"
-          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <div class="prod-img-placeholder" style="display:none">Aero White®<br>🤍</div>
-        <span class="prod-badge">🏙️ Look urbano</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Casual · Unisex</div>
-        <div class="prod-name">Aero White®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
-        <div class="prod-price-normal">Ver precio en tienda</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+  <div class="carousel-wrap">
+    <div class="productos-track" id="prod-modelos-track">
 
-    <!-- Aero Black -->
-    <a href="https://www.salvajeshoes.com.ar/productos/aero-black/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-black-480-0.webp" alt="Aero Black"
-          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <div class="prod-img-placeholder" style="display:none">Aero Black®<br>🖤</div>
-        <span class="prod-badge">🏙️ Look urbano</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Casual · Unisex</div>
-        <div class="prod-name">Aero Black®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
-        <div class="prod-price-normal">Ver precio en tienda</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+      <a href="https://www.salvajeshoes.com.ar/productos/aero-white/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-white-480-0.webp" alt="Aero White" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+          <div class="prod-img-placeholder" style="display:none">Aero White®<br>🤍</div>
+          <span class="prod-badge">🏙️ Look urbano</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Casual · Unisex</div>
+          <div class="prod-name">Aero White®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$183.999</span></div>
+          <div class="prod-price-normal">Precio normal: $229.999</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
 
-    <!-- Lavanda -->
-    <a href="https://www.salvajeshoes.com.ar/productos/lavanda/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/portada-2c01cf53d2ca49aff117716986186354-480-0.webp" alt="Lavanda">
-        <span class="prod-badge">⛰️ Alto agarre</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Deportivas · Mujer</div>
-        <div class="prod-name">Lavanda®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
-        <div class="prod-price-normal">Ver precio en tienda</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+      <a href="https://www.salvajeshoes.com.ar/productos/aero-black/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-black-480-0.webp" alt="Aero Black" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+          <div class="prod-img-placeholder" style="display:none">Aero Black®<br>🖤</div>
+          <span class="prod-badge">🏙️ Look urbano</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Casual · Unisex</div>
+          <div class="prod-name">Aero Black®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$183.999</span></div>
+          <div class="prod-price-normal">Precio normal: $229.999</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
 
-    <!-- Diamante Noche -->
-    <a href="https://www.salvajeshoes.com.ar/productos/diamante-noche/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/diamante-noche-480-0.webp" alt="Diamante Noche"
-          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <div class="prod-img-placeholder" style="display:none">Diamante Noche®<br>🌑</div>
-        <span class="prod-badge">⛰️ Alto agarre</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Trekking · Unisex</div>
-        <div class="prod-name">Diamante Noche®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
-        <div class="prod-price-normal">Ver precio en tienda</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+      <a href="https://www.salvajeshoes.com.ar/productos/lavanda/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/portada-2c01cf53d2ca49aff117716986186354-480-0.webp" alt="Lavanda">
+          <span class="prod-badge">⛰️ Alto agarre</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Deportivas · Mujer</div>
+          <div class="prod-name">Lavanda®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$146.250</span></div>
+          <div class="prod-price-normal">Precio normal: $195.000</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
 
-    <!-- Aguila Guerrera -->
-    <a href="https://www.salvajeshoes.com.ar/productos/aguila-guerrera-zapatilla-barefoot-pie-descalzo-zero-drop-planas-gimnasio/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/e07928a4-42b8-4e60-be0d-04b9d552ba5b-5b5444d445acb70eb317437886164340-480-0.webp" alt="Aguila Guerrera">
-        <span class="prod-badge">🪶 Ultra liviana</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Deportivas · Gimnasio</div>
-        <div class="prod-name">Aguila Guerrera®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$117.000</span></div>
-        <div class="prod-price-normal">Precio normal: $156.000</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+      <a href="https://www.salvajeshoes.com.ar/productos/diamante-noche/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/diamante-noche-480-0.webp" alt="Diamante Noche" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+          <div class="prod-img-placeholder" style="display:none">Diamante Noche®<br>🌑</div>
+          <span class="prod-badge">⛰️ Alto agarre</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Trekking · Unisex</div>
+          <div class="prod-name">Diamante Noche®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$156.799</span></div>
+          <div class="prod-price-normal">Precio normal: $195.999</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
 
-    <!-- Nube Hielo -->
-    <a href="https://www.salvajeshoes.com.ar/productos/nube-hielo/" class="prod-card">
-      <div class="prod-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/nube-hielo-480-0.webp" alt="Nube Hielo"
-          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <div class="prod-img-placeholder" style="display:none">Nube Hielo®<br>❄️</div>
-        <span class="prod-badge">🪶 Ultra liviana</span>
-      </div>
-      <div class="prod-info">
-        <div class="prod-cat">Casual · Unisex</div>
-        <div class="prod-name">Nube Hielo®</div>
-        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
-        <div class="prod-price-normal">Ver precio en tienda</div>
-        <div class="prod-cuotas">Cuotas sin interés</div>
-        <div class="prod-btn">Ver modelo →</div>
-      </div>
-    </a>
+      <a href="https://www.salvajeshoes.com.ar/productos/aguila-guerrera-zapatilla-barefoot-pie-descalzo-zero-drop-planas-gimnasio/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/e07928a4-42b8-4e60-be0d-04b9d552ba5b-5b5444d445acb70eb317437886164340-480-0.webp" alt="Aguila Guerrera">
+          <span class="prod-badge">🪶 Ultra liviana</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Deportivas · Gimnasio</div>
+          <div class="prod-name">Aguila Guerrera®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$117.000</span></div>
+          <div class="prod-price-normal">Precio normal: $156.000</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
 
+      <a href="https://www.salvajeshoes.com.ar/productos/nube-hielo/" class="prod-card">
+        <div class="prod-img">
+          <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/nube-hielo-480-0.webp" alt="Nube Hielo" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+          <div class="prod-img-placeholder" style="display:none">Nube Hielo®<br>❄️</div>
+          <span class="prod-badge">🪶 Ultra liviana</span>
+        </div>
+        <div class="prod-info">
+          <div class="prod-cat">Casual · Unisex</div>
+          <div class="prod-name">Nube Hielo®</div>
+          <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$117.000</span></div>
+          <div class="prod-price-normal">Precio normal: $156.000</div>
+          <div class="prod-cuotas">Cuotas sin interés</div>
+          <div class="prod-btn">Ver modelo →</div>
+        </div>
+      </a>
+
+    </div>
+    <div class="carousel-dots prod-dots" id="prod-modelos-dots">
+      <button class="carousel-dot active" onclick="goToProd(0)"></button>
+      <button class="carousel-dot" onclick="goToProd(1)"></button>
+      <button class="carousel-dot" onclick="goToProd(2)"></button>
+      <button class="carousel-dot" onclick="goToProd(3)"></button>
+      <button class="carousel-dot" onclick="goToProd(4)"></button>
+      <button class="carousel-dot" onclick="goToProd(5)"></button>
+    </div>
   </div>
+
   <div style="text-align:center;margin-top:32px">
-    <a href="https://www.salvajeshoes.com.ar/productos/" style="font-size:14px;color:#4a9972;font-weight:700;text-decoration:underline">Ver todos los modelos disponibles →</a>
+    <a href="https://www.salvajeshoes.com.ar/productos/" style="font-size:14px;color:#4a9972;font-weight:700;text-decoration:underline">Ver todos los modelos →</a>
   </div>
 </section>
 
@@ -587,62 +564,36 @@ img{display:block;max-width:100%}
     <div class="trust-pill"><span class="tp-icon">💳</span>Cuotas sin interés</div>
     <div class="trust-pill"><span class="tp-icon">🛡️</span>Garantía suela 1 año</div>
     <div class="trust-pill"><span class="tp-icon">⭐</span>4.8 / 5 · 8.167 reseñas</div>
-    <div class="trust-pill"><span class="tp-icon">🦅</span>Podólogos europeos</div>
+    <div class="trust-pill"><span class="tp-icon">🇪🇺</span>Podólogos europeos</div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-logo">salvaje shoes.</div>
-  <div class="footer-links">
-    <a href="https://www.salvajeshoes.com.ar/guia-de-talles/">Guía de talles</a>
-    <a href="https://www.salvajeshoes.com.ar/cambios-y-devoluciones/">Cambios y devoluciones</a>
-    <a href="https://www.salvajeshoes.com.ar/blog/">Blog</a>
-    <a href="https://www.salvajeshoes.com.ar/productos/">Todos los productos</a>
-  </div>
-  <div class="footer-legal">© 2026 Salvaje Shoes · Todos los derechos reservados</div>
-</footer>
-
-<!-- STICKY — aparece desde sección mitos -->
-<div class="sticky-bottom" id="sticky">
-  <div class="sb-left">Ya leíste mucho. <strong>Es hora de ir a elegir un par para vos.</strong></div>
-  <a href="https://www.salvajeshoes.com.ar/productos/" class="sb-btn">Ver modelos →</a>
-</div>
-
 <script>
-// ── Progress nav — scroll-based, funciona dentro y fuera de iframe ──
+// ── Progress nav ──
 const sections=['descalzo','problema','como','resultados','mitos','paraquien','ver-modelos','faq'];
 const navItems=document.querySelectorAll('.pn-item');
-
 function updateNav(){
   const scrollY=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
   let cur=sections[0];
   sections.forEach(function(id){
     const el=document.getElementById(id);
-    if(el && scrollY >= el.offsetTop - 220) cur=id;
+    if(el&&scrollY>=el.offsetTop-220) cur=id;
   });
-  navItems.forEach(function(item,i){
-    item.classList.toggle('active', sections[i]===cur);
-  });
+  navItems.forEach(function(item,i){item.classList.toggle('active',sections[i]===cur);});
 }
-window.addEventListener('scroll', updateNav, {passive:true});
-document.addEventListener('scroll', updateNav, {passive:true});
-document.documentElement.addEventListener('scroll', updateNav, {passive:true});
-updateNav(); // estado inicial
+window.addEventListener('scroll',updateNav,{passive:true});
+document.addEventListener('scroll',updateNav,{passive:true});
+document.documentElement.addEventListener('scroll',updateNav,{passive:true});
+updateNav();
 
-function scrollTo(id){
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
+function scrollTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
 // ── FAQ ──
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const ans=item.querySelector('.faq-a');
   const isOpen=btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(function(b){
-    b.classList.remove('open');
-    b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
-  });
+  document.querySelectorAll('.faq-q.open').forEach(function(b){b.classList.remove('open');b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');});
   if(!isOpen){btn.classList.add('open');ans.classList.add('open');}
 }
 
@@ -653,20 +604,24 @@ function updateSteps(){
   const mid=scrollY+window.innerHeight/2;
   comoSteps.forEach(function(step){
     const top=step.getBoundingClientRect().top+scrollY;
-    step.classList.toggle('active', mid>top && mid<top+step.offsetHeight+60);
+    step.classList.toggle('active',mid>top&&mid<top+step.offsetHeight+60);
   });
 }
-window.addEventListener('scroll', updateSteps, {passive:true});
-document.addEventListener('scroll', updateSteps, {passive:true});
+window.addEventListener('scroll',updateSteps,{passive:true});
+document.addEventListener('scroll',updateSteps,{passive:true});
 
-// ── Carousel ──
+// ── Carousels ──
 function initCarousel(trackId,dotsId){
   const track=document.getElementById(trackId);
   const dotsWrap=document.getElementById(dotsId);
   if(!track||!dotsWrap) return;
   function check(){
-    if(window.innerWidth<=960){dotsWrap.style.display='flex';track.addEventListener('scroll',function(){updateDots(track,dotsWrap);},{passive:true});}
-    else{dotsWrap.style.display='none';}
+    if(window.innerWidth<=960){
+      dotsWrap.style.display='flex';
+      track.addEventListener('scroll',function(){updateDots(track,dotsWrap);},{passive:true});
+    } else {
+      dotsWrap.style.display='none';
+    }
   }
   check(); window.addEventListener('resize',check);
 }
@@ -688,20 +643,16 @@ function goToMito(idx){
   const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
   setTimeout(function(){updateDots(track,dotsWrap);},400);
 }
+function goToProd(idx){
+  const track=document.getElementById('prod-modelos-track');
+  const dotsWrap=document.getElementById('prod-modelos-dots');
+  if(!track)return;
+  const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
+  setTimeout(function(){updateDots(track,dotsWrap);},400);
+}
 initCarousel('prob-track','prob-dots');
 initCarousel('mitos-track','mitos-dots');
-
-// ── Sticky — aparece al pasar el hero ──
-const sticky=document.getElementById('sticky');
-const mitosEl=document.getElementById('mitos');
-function updateSticky(){
-  if(!sticky||!mitosEl) return;
-  const scrollY=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
-  sticky.classList.toggle('visible', scrollY > mitosEl.offsetTop - 100);
-}
-window.addEventListener('scroll', updateSticky, {passive:true});
-document.addEventListener('scroll', updateSticky, {passive:true});
-updateSticky();
+initCarousel('prod-modelos-track','prod-modelos-dots');
 </script>
 </body>
 </html>
