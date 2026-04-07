@@ -11,223 +11,252 @@ html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;background:#fff;color:#1a1a1a;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
-
-/* ── BAR ── */
-.bar{background:#1a1a1a;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.01em}
-.bar span{color:#6fcf97;font-weight:700}
-
-/* ── HEADER ── */
-.header{background:#fff;border-bottom:1px solid #f0f0f0;padding:14px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
-.logo img{height:46px;width:auto}
+.bar{background:#2a2a2a;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.01em}
+.bar span{color:#8ecdb0;font-weight:700}
+.header{background:#fff;border-bottom:1px solid #efefef;padding:14px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
 .logo-text{font-size:21px;font-weight:800;letter-spacing:-.01em;color:#1a1a1a}
 .nav{display:flex;gap:28px;list-style:none}
 .nav a{font-size:14px;font-weight:500;color:#1a1a1a;transition:color .2s}
-.nav a:hover{color:#27ae60}
-.btn-header{background:#27ae60;color:#fff;padding:11px 24px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;transition:background .2s}
-.btn-header:hover{background:#219a52}
-
-/* ── HERO EDUCATIVO ── */
+.nav a:hover{color:#4a9972}
+.btn-header{background:#4a9972;color:#fff;padding:11px 24px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;transition:background .2s;border-radius:24px}
+.btn-header:hover{background:#3a8060}
+.progress-nav{background:#fafafa;border-bottom:1px solid #efefef;padding:0 60px;display:flex;overflow-x:auto;gap:0;position:sticky;top:73px;z-index:100;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.progress-nav::-webkit-scrollbar{display:none}
+.pn-item{padding:15px 22px;font-size:13px;font-weight:600;color:#aaa;white-space:nowrap;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;flex-shrink:0}
+.pn-item:hover{color:#1a1a1a}
+.pn-item.active{color:#4a9972;border-bottom-color:#4a9972}
+.pn-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px;color:#ccc}
+.pn-item.active .pn-num{color:#a8cfc0}
+.edu-section{padding:72px 60px;border-bottom:1px solid #f0f0f0}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#4a9972;margin-bottom:12px}
+.section-h2{font-size:clamp(22px,2.8vw,38px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.1;margin-bottom:0}
+.divider-line{width:44px;height:4px;background:#4a9972;margin:14px 0 26px;border-radius:2px}
+/* HERO */
 .hero-edu{padding:72px 60px 64px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;border-bottom:1px solid #f0f0f0}
-.hero-edu-left{}
-.hero-edu-left .tag{display:inline-flex;align-items:center;gap:8px;background:#e8f8f0;border:1px solid #a8dfc0;color:#27ae60;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px}
-.hero-edu-left h1{font-size:clamp(32px,4vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:20px}
-.hero-edu-left h1 em{font-style:normal;color:#27ae60}
-.hero-edu-left .hero-lead{font-size:16px;color:#555;line-height:1.75;margin-bottom:32px;max-width:460px}
+.hero-edu-left .tag{display:inline-flex;align-items:center;gap:8px;background:#edf7f2;border:1px solid #b8d8c8;color:#4a9972;font-size:12px;font-weight:700;padding:6px 16px;border-radius:24px;margin-bottom:24px}
+.hero-edu-left h1{font-size:clamp(28px,3.5vw,50px);font-weight:900;line-height:1.08;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:20px}
+.hero-edu-left h1 em{font-style:normal;color:#c0392b}
+.hero-edu-left .hero-lead{font-size:15px;color:#666;line-height:1.8;margin-bottom:32px;max-width:460px}
 .hero-edu-left .hero-lead strong{color:#1a1a1a}
-.hero-scroll-hint{font-size:13px;color:#aaa;font-weight:500;display:flex;align-items:center;gap:8px}
-.hero-scroll-hint span{animation:bounce 1.6s infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-
-.hero-edu-right{position:relative}
-.hero-stat-card{background:#f9f9f9;border:1px solid #e8e8e8;padding:32px;display:flex;flex-direction:column;gap:20px}
+.hero-scroll-hint{font-size:13px;color:#bbb;font-weight:500;display:flex;align-items:center;gap:8px}
+.hero-scroll-hint span{animation:bounce 1.8s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.hero-stat-card{background:#f9f9f9;border:1px solid #e8e8e8;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px}
 .hsc-row{display:flex;align-items:flex-start;gap:16px;padding-bottom:20px;border-bottom:1px solid #efefef}
 .hsc-row:last-child{border-bottom:none;padding-bottom:0}
-.hsc-num{font-size:44px;font-weight:900;line-height:1;color:#1a1a1a;flex-shrink:0;min-width:80px}
-.hsc-num.green{color:#27ae60}
+.hsc-num{font-size:44px;font-weight:900;line-height:1;flex-shrink:0;min-width:80px}
+.hsc-num.green{color:#4a9972}
 .hsc-num.red{color:#c0392b}
-.hsc-text{font-size:14px;color:#555;line-height:1.6;padding-top:6px}
+.hsc-text{font-size:14px;color:#666;line-height:1.6;padding-top:6px}
 .hsc-text strong{color:#1a1a1a;display:block;font-size:15px;margin-bottom:4px}
-.source-note{font-size:11px;color:#aaa;margin-top:12px;text-align:right;line-height:1.4}
-
-/* ── PROGRESS NAV ── */
-.progress-nav{background:#f9f9f9;border-bottom:1px solid #e8e8e8;padding:0 60px;display:flex;overflow-x:auto;gap:0;position:sticky;top:73px;z-index:100}
-.pn-item{padding:16px 24px;font-size:13px;font-weight:600;color:#999;white-space:nowrap;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;flex-shrink:0}
-.pn-item:hover{color:#1a1a1a}
-.pn-item.active{color:#27ae60;border-bottom-color:#27ae60}
-.pn-num{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px;color:#ccc}
-.pn-item.active .pn-num{color:#a8dfc0}
-
-/* ── SECTION BASE ── */
-.edu-section{padding:72px 60px;border-bottom:1px solid #f0f0f0}
-.section-eyebrow{font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#27ae60;margin-bottom:12px}
-.section-h2{font-size:clamp(24px,3vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.1;margin-bottom:0}
-.divider-line{width:48px;height:4px;background:#27ae60;margin:16px 0 28px}
-
-/* ── 1. EL PROBLEMA ── */
-.problema-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e8e8e8;border:1px solid #e8e8e8;margin-top:40px}
-.prob-card{background:#fff;padding:28px 24px}
-.prob-icon{font-size:32px;margin-bottom:14px}
-.prob-num{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#ccc;margin-bottom:8px}
-.prob-card h3{font-size:15px;font-weight:800;text-transform:uppercase;margin-bottom:10px;line-height:1.2;color:#1a1a1a}
-.prob-card p{font-size:13px;color:#666;line-height:1.65}
-.prob-card .prob-consequence{margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #c0392b;font-size:12px;color:#c0392b;font-weight:600;line-height:1.4}
-
-/* ── 2. CÓMO FUNCIONA ── */
+.source-note{font-size:11px;color:#bbb;margin-top:12px;text-align:right;line-height:1.4}
+/* INTRO */
+.intro-descalzo{padding:64px 60px;background:#f2faf6;border-bottom:1px solid #d8eee4}
+.intro-desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:32px}
+.idc-text p{font-size:15px;color:#3a5a4a;line-height:1.85;margin-bottom:14px}
+.idc-text p strong{color:#1a1a1a}
+.idc-text p:last-child{margin-bottom:0}
+.idc-pillars{display:flex;flex-direction:column;gap:14px}
+.idc-pillar{background:#fff;border:1px solid #c8e4d4;border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px}
+.idc-pillar .ip-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.idc-pillar h4{font-size:13px;font-weight:800;text-transform:uppercase;color:#1a1a1a;margin-bottom:4px;letter-spacing:.01em}
+.idc-pillar p{font-size:12px;color:#666;line-height:1.55;margin:0}
+/* PROBLEMA */
+.prob-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:26px 22px;transition:box-shadow .2s}
+.prob-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.prob-icon{font-size:30px;margin-bottom:14px}
+.prob-num{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#ccc;margin-bottom:8px}
+.prob-card h3{font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:10px;line-height:1.2;color:#1a1a1a}
+.prob-card p{font-size:13px;color:#777;line-height:1.65}
+.prob-consequence{margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #e07070;border-radius:0 6px 6px 0;font-size:12px;color:#c0392b;font-weight:600;line-height:1.4}
+/* CARRUSEL */
+.carousel-wrap{position:relative;margin-top:40px}
+.carousel-track{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.carousel-dots{display:none;justify-content:center;gap:8px;margin-top:20px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:#ddd;cursor:pointer;transition:all .2s;border:none;padding:0}
+.carousel-dot.active{background:#4a9972;width:20px;border-radius:4px}
+/* COMO */
 .como-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px}
 .como-steps{display:flex;flex-direction:column;gap:0}
 .como-step{display:grid;grid-template-columns:56px 1fr;gap:0;cursor:pointer}
 .cs-line{display:flex;flex-direction:column;align-items:center}
-.cs-dot{width:40px;height:40px;border-radius:50%;background:#1a1a1a;color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
-.como-step:hover .cs-dot,.como-step.active .cs-dot{background:#27ae60}
-.cs-vert{width:2px;flex:1;background:#e8e8e8;margin:4px auto}
+.cs-dot{width:40px;height:40px;border-radius:50%;background:#e8e8e8;color:#999;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.como-step.active .cs-dot{background:#4a9972;color:#fff}
+.cs-vert{width:2px;flex:1;background:#efefef;margin:4px auto}
 .como-step:last-child .cs-vert{display:none}
-.cs-content{padding:0 0 32px 16px}
-.cs-content h3{font-size:15px;font-weight:800;text-transform:uppercase;margin-bottom:8px;color:#1a1a1a;padding-top:8px;line-height:1.2}
-.cs-content p{font-size:13px;color:#666;line-height:1.65}
-.cs-content .cs-highlight{margin-top:10px;background:#e8f8f0;border-left:3px solid #27ae60;padding:10px 12px;font-size:12px;color:#27ae60;font-weight:700}
-.como-right{}
-.comp-visual{background:#f9f9f9;border:1px solid #e8e8e8;overflow:hidden}
+.cs-content{padding:0 0 32px 14px}
+.cs-content h3{font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:8px;color:#1a1a1a;padding-top:8px;line-height:1.2}
+.cs-content p{font-size:13px;color:#777;line-height:1.65}
+.cs-highlight{margin-top:10px;background:#edf7f2;border-left:3px solid #4a9972;border-radius:0 8px 8px 0;padding:10px 12px;font-size:12px;color:#4a9972;font-weight:700}
+.comp-visual{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden}
 .cv-header{display:grid;grid-template-columns:1fr 1fr;background:#1a1a1a}
-.cv-header div{padding:14px 20px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;text-align:center}
-.cv-header .salvaje{background:#27ae60}
-.cv-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #e8e8e8}
+.cv-header div{padding:14px 20px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-align:center}
+.cv-header .salvaje{background:#4a9972}
+.cv-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #efefef}
 .cv-row:nth-child(even){background:#fafafa}
-.cv-cell{padding:14px 20px;font-size:13px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-right:1px solid #e8e8e8}
+.cv-cell{padding:13px 18px;font-size:13px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-right:1px solid #efefef}
 .cv-cell:last-child{border-right:none}
-.cv-cell .cv-icon{font-size:20px}
-.cv-cell .cv-label{font-size:11px;color:#888;font-weight:500}
-.cv-cell.good .cv-label{color:#27ae60;font-weight:700}
-
-/* ── 3. RESULTADOS ── */
+.cv-cell .cv-icon{font-size:18px}
+.cv-cell .cv-label{font-size:11px;color:#aaa;font-weight:500}
+.cv-cell.good .cv-label{color:#4a9972;font-weight:700}
+/* RESULTADOS */
 .res-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:40px}
-.res-stat-card{border:1px solid #e8e8e8;padding:28px;text-align:center;position:relative;overflow:hidden}
-.res-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#27ae60}
+.res-stat-card{border:1px solid #e8e8e8;border-radius:14px;padding:28px;text-align:center;position:relative;overflow:hidden}
+.res-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#4a9972;border-radius:14px 14px 0 0}
 .rsc-circle{position:relative;width:100px;height:100px;margin:0 auto 16px}
 .rsc-svg{transform:rotate(-90deg)}
-.rsc-bg{fill:none;stroke:#e8f5ee;stroke-width:8}
-.rsc-fill{fill:none;stroke:#27ae60;stroke-width:8;stroke-linecap:round}
-.rsc-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:24px;font-weight:900;color:#27ae60}
-.rsc-text{font-size:13px;color:#555;line-height:1.6}
-.rsc-text strong{display:block;color:#1a1a1a;font-weight:700;margin-bottom:4px}
-.res-source{font-size:12px;color:#aaa;margin-top:28px;text-align:center;line-height:1.5}
-
-.res-reviews{margin-top:40px}
-.reviews-meta{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #f0f0f0}
+.rsc-bg{fill:none;stroke:#dff0e8;stroke-width:8}
+.rsc-fill{fill:none;stroke:#4a9972;stroke-width:8;stroke-linecap:round}
+.rsc-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px;font-weight:900;color:#4a9972}
+.rsc-text{font-size:13px;color:#666;line-height:1.6}
+.rsc-text strong{display:block;color:#1a1a1a;font-weight:700;margin-bottom:4px;font-size:13px}
+.res-source{font-size:12px;color:#bbb;margin-top:28px;text-align:center;line-height:1.5}
+/* REVIEWS */
+.reviews-meta{display:flex;align-items:center;gap:16px;margin:32px 0 24px;padding-bottom:20px;border-bottom:1px solid #f0f0f0}
 .rm-score{font-size:52px;font-weight:900;color:#1a1a1a;line-height:1}
 .rm-right .rm-stars{color:#f5a623;font-size:20px;letter-spacing:2px}
-.rm-right .rm-count{font-size:14px;color:#888}
+.rm-right .rm-count{font-size:14px;color:#999}
 .reviews-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.rev-card{background:#fafafa;border:1px solid #e8e8e8;padding:22px;border-top:3px solid #f5a623}
-.rc-stars{color:#f5a623;font-size:13px;letter-spacing:1px;margin-bottom:8px}
-.rc-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.3}
-.rc-body{font-size:12px;color:#666;line-height:1.65;margin-bottom:10px}
-.rc-author{font-size:10px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-
-/* ── 4. MITOS ── */
-.mitos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
-.mito-card{border:1px solid #e8e8e8;overflow:hidden;transition:border-color .2s}
-.mito-card:hover{border-color:#27ae60}
-.mc-img{aspect-ratio:16/9;overflow:hidden;background:#e8e8e8}
+.rev-card{background:#fafafa;border:1px solid #e8e8e8;border-radius:14px;padding:22px;border-top:3px solid #f5a623}
+.rc-stars{color:#f5a623;font-size:13px;letter-spacing:1px;margin-bottom:10px}
+.rc-body{font-size:13px;color:#555;line-height:1.7;margin-bottom:12px;font-style:italic}
+.rc-author{font-size:11px;color:#aaa;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.rc-product{font-size:11px;color:#b8d8c8;margin-top:4px;font-weight:500}
+/* MITOS */
+.mitos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:0}
+.mito-card{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;transition:box-shadow .2s}
+.mito-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.mc-img{aspect-ratio:1/1;overflow:hidden;background:#e8e8e8}
 .mc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .mito-card:hover .mc-img img{transform:scale(1.04)}
 .mc-body{padding:22px}
-.mc-mito-tag{display:inline-flex;align-items:center;gap:6px;background:#fff0f0;border:1px solid #f0c0c0;color:#c0392b;font-size:11px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
-.mc-realidad-tag{display:inline-flex;align-items:center;gap:6px;background:#e8f8f0;border:1px solid #a8dfc0;color:#27ae60;font-size:11px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em}
+.mc-mito-tag{display:inline-flex;align-items:center;gap:6px;background:#fff0f0;border:1px solid #f0c8c8;color:#c0392b;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.mc-realidad-tag{display:inline-flex;align-items:center;gap:6px;background:#edf7f2;border:1px solid #b8d8c8;color:#4a9972;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
 .mc-body h3{font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:8px;line-height:1.25;color:#1a1a1a}
-.mc-body p{font-size:13px;color:#666;line-height:1.65}
-.mc-link{font-size:12px;color:#27ae60;font-weight:700;margin-top:10px;display:inline-block}
-
-/* ── 5. PARA QUIÉN ── */
-.paraquien-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.pq-card{border:1px solid #e8e8e8;padding:28px;transition:border-color .2s;cursor:default}
-.pq-card:hover{border-color:#27ae60}
-.pq-icon{font-size:40px;margin-bottom:16px}
-.pq-card h3{font-size:15px;font-weight:800;text-transform:uppercase;margin-bottom:10px;color:#1a1a1a;line-height:1.2}
-.pq-card p{font-size:13px;color:#666;line-height:1.65;margin-bottom:12px}
-.pq-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
-.pq-bullets li{font-size:12px;color:#444;display:flex;align-items:flex-start;gap:7px}
-.pq-bullets li::before{content:"✅";flex-shrink:0;font-size:11px;margin-top:1px}
-
-/* ── UGC ── */
-.ugc-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}
+.mc-body p{font-size:13px;color:#777;line-height:1.65}
+.mc-link{font-size:12px;color:#4a9972;font-weight:700;margin-top:10px;display:inline-block}
+/* UGC */
+.ugc-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
 .ugc-strip img{width:100%;aspect-ratio:1;object-fit:cover}
-.ugc-strip div{aspect-ratio:1;background:#e8f5ee;display:flex;align-items:center;justify-content:center;font-size:28px}
-
-/* ── CTA INTERMEDIO ── */
-.cta-mid{background:#1a1a1a;padding:56px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
-.cta-mid-left h2{font-size:clamp(20px,2.5vw,32px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
-.cta-mid-left p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;max-width:500px}
+/* PARA QUIÉN */
+.paraquien-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.pq-card{border:1px solid #e8e8e8;border-radius:14px;padding:28px;transition:box-shadow .2s}
+.pq-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.pq-icon{font-size:38px;margin-bottom:16px}
+.pq-card h3{font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:10px;color:#1a1a1a;line-height:1.2}
+.pq-card p{font-size:13px;color:#777;line-height:1.65;margin-bottom:12px}
+.pq-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+.pq-bullets li{font-size:13px;color:#555;display:flex;align-items:flex-start;gap:8px}
+.pq-bullets li::before{content:"✅";flex-shrink:0;font-size:12px;margin-top:1px}
+/* CTA MID */
+.cta-mid{background:#2a2a2a;padding:52px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-mid-left h2{font-size:clamp(18px,2.5vw,30px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.cta-mid-left p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65;max-width:500px}
 .cta-mid-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
-.btn-big-green{background:#27ae60;color:#fff;padding:17px 40px;font-size:15px;font-weight:800;border:none;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:.02em;transition:background .2s;white-space:nowrap;display:inline-block;text-transform:uppercase}
-.btn-big-green:hover{background:#219a52}
-.cta-trust-line{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.04em;text-align:right}
-
-/* ── CTA FINAL ── */
-.cta-final{padding:80px 60px;text-align:center;background:#f9f9f9;border-top:1px solid #e8e8e8}
-.cta-final .cf-eyebrow{font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#27ae60;margin-bottom:14px}
-.cta-final h2{font-size:clamp(26px,4vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1.05;margin-bottom:16px;color:#1a1a1a}
-.cta-final h2 em{font-style:normal;color:#27ae60}
-.cta-final p{font-size:16px;color:#666;line-height:1.7;margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto}
-.cta-final .btn-big-green{font-size:16px;padding:20px 52px}
-.cta-final .cf-trust{margin-top:20px;font-size:13px;color:#aaa;letter-spacing:.03em}
-.trust-pills{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:32px}
-.trust-pill{display:flex;align-items:center;gap:8px;font-size:13px;color:#555;font-weight:500}
-.trust-pill .tp-icon{font-size:18px}
-
-/* ── FOOTER ── */
-.footer{background:#111;padding:36px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #222}
+.btn-big-green{background:#4a9972;color:#fff;padding:16px 40px;font-size:14px;font-weight:800;border:none;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:.02em;transition:background .2s;white-space:nowrap;display:inline-block;text-transform:uppercase;border-radius:28px}
+.btn-big-green:hover{background:#3a8060}
+.cta-trust-line{font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.04em;text-align:right}
+/* PRODUCTOS GRID */
+.productos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod-card{border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;display:block;transition:box-shadow .2s}
+.prod-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.1)}
+.prod-img{aspect-ratio:1;overflow:hidden;background:#f0f0f0;position:relative;display:flex;align-items:center;justify-content:center}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-img img{transform:scale(1.04)}
+.prod-img-placeholder{font-size:13px;font-weight:700;color:#aaa;text-align:center;padding:20px;line-height:1.4}
+.prod-badge{position:absolute;top:10px;left:10px;background:#4a9972;color:#fff;font-size:10px;font-weight:700;padding:4px 12px;letter-spacing:.06em;text-transform:uppercase;border-radius:20px;z-index:1}
+.prod-info{padding:18px}
+.prod-cat{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-weight:600}
+.prod-name{font-size:16px;font-weight:800;margin-bottom:12px;color:#1a1a1a}
+.prod-price-transfer{background:#edf7f2;border:1px solid #b8d8c8;padding:8px 12px;border-radius:10px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.ppt-label{background:#4a9972;color:#fff;font-size:10px;font-weight:700;padding:2px 9px;text-transform:uppercase;border-radius:10px;white-space:nowrap}
+.ppt-price{font-size:15px;font-weight:800;color:#4a9972}
+.prod-price-normal{font-size:12px;color:#aaa;margin-bottom:3px}
+.prod-cuotas{font-size:12px;color:#777}
+.prod-btn{display:block;width:100%;background:#1a1a1a;color:#fff;padding:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;border:none;cursor:pointer;margin-top:14px;font-family:'Poppins',sans-serif;transition:background .2s;border-radius:8px}
+.prod-btn:hover{background:#4a9972}
+/* CTA FINAL */
+.cta-final{padding:80px 60px;text-align:center;background:#f9f9f9;border-top:1px solid #efefef}
+.cta-final .cf-eyebrow{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#4a9972;margin-bottom:14px}
+.cta-final h2{font-size:clamp(24px,3.5vw,46px);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1.05;margin-bottom:16px;color:#1a1a1a}
+.cta-final h2 em{font-style:normal;color:#4a9972}
+.cta-final p{font-size:15px;color:#777;line-height:1.75;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+.trust-pills{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.trust-pill{display:flex;align-items:center;gap:7px;font-size:13px;color:#666;font-weight:500;background:#fff;border:1px solid #e8e8e8;padding:8px 16px;border-radius:20px}
+.trust-pill .tp-icon{font-size:16px}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;margin-top:36px;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden}
+.faq-item{border-bottom:1px solid #f0f0f0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:#fff;border:none;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;text-align:left;transition:background .2s}
+.faq-q:hover{background:#f9f9f9}
+.faq-q.open{background:#f2faf6;color:#4a9972}
+.faq-arrow{font-size:18px;flex-shrink:0;transition:transform .25s;color:#aaa}
+.faq-q.open .faq-arrow{transform:rotate(180deg);color:#4a9972}
+.faq-a{display:none;padding:0 24px 20px;background:#f9fdfb}
+.faq-a.open{display:block}
+.faq-a p{font-size:14px;color:#555;line-height:1.8}
+.faq-a a{color:#4a9972;font-weight:600}
+/* STICKY — oculto hasta mitad de página */
+.sticky-bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #4a9972;padding:13px 60px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:199;box-shadow:0 -4px 24px rgba(0,0,0,.06);transform:translateY(100%);transition:transform .35s ease}
+.sticky-bottom.visible{transform:translateY(0)}
+.sb-left{font-size:14px;color:#666}
+.sb-left strong{color:#1a1a1a;font-weight:700}
+.sb-btn{background:#4a9972;color:#fff;padding:12px 32px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .2s;white-space:nowrap;border-radius:24px}
+.sb-btn:hover{background:#3a8060}
+/* FOOTER */
+.footer{background:#1a1a1a;padding:36px 60px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.01em}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:12px;color:#555;transition:color .2s}
 .footer-links a:hover{color:#fff}
 .footer-legal{font-size:11px;color:#444}
-
-/* ── STICKY BOTTOM ── */
-.sticky-bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #27ae60;padding:13px 60px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:199;box-shadow:0 -4px 24px rgba(0,0,0,.07)}
-.sb-left{font-size:14px;color:#555}
-.sb-left strong{color:#1a1a1a;font-weight:700}
-.sb-btn{background:#27ae60;color:#fff;padding:12px 32px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .2s;white-space:nowrap}
-.sb-btn:hover{background:#219a52}
-
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:960px){
   .header{padding:14px 20px}
   .nav{display:none}
-  .hero-edu{grid-template-columns:1fr;padding:48px 24px;gap:40px}
-  .hero-edu-left h1{font-size:36px}
-  .progress-nav{top:66px;padding:0 20px}
+  .hero-edu{grid-template-columns:1fr;padding:48px 24px;gap:36px}
+  .progress-nav{top:66px;padding:0 16px}
   .edu-section{padding:52px 24px}
-  .problema-grid{grid-template-columns:1fr 1fr;gap:1px}
-  .como-inner{grid-template-columns:1fr;gap:40px}
-  .res-top{grid-template-columns:1fr;max-width:360px}
+  .intro-descalzo{padding:48px 24px}
+  .intro-desc-grid{grid-template-columns:1fr;gap:28px}
+  .carousel-track{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+  .carousel-track::-webkit-scrollbar{display:none}
+  .carousel-track .prob-card{min-width:78vw;max-width:78vw;scroll-snap-align:start;flex-shrink:0}
+  .carousel-dots{display:flex}
+  .mitos-grid{display:flex;overflow-x:auto;gap:20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .mitos-grid::-webkit-scrollbar{display:none}
+  .mitos-grid .mito-card{min-width:82vw;max-width:82vw;scroll-snap-align:start;flex-shrink:0}
+  .como-inner{grid-template-columns:1fr;gap:36px}
+  .res-top{grid-template-columns:1fr;max-width:340px}
   .reviews-scroll{grid-template-columns:1fr}
-  .mitos-grid{grid-template-columns:1fr}
   .paraquien-grid{grid-template-columns:1fr}
   .ugc-strip{grid-template-columns:repeat(4,1fr)}
-  .cta-mid{padding:48px 24px;flex-direction:column;gap:28px}
+  .cta-mid{padding:44px 24px;flex-direction:column;gap:24px}
   .cta-mid-right{align-items:flex-start}
-  .cta-final{padding:56px 24px}
-  .footer{padding:32px 20px;flex-direction:column;align-items:flex-start}
+  .cta-final{padding:52px 24px}
+  .productos-grid{grid-template-columns:1fr 1fr}
+  .footer{padding:32px 20px 80px;flex-direction:column;align-items:flex-start}
+  /* sticky mobile: solo botón, texto oculto */
   .sticky-bottom{padding:12px 20px}
   .sb-left{display:none}
-  .sb-btn{width:100%;text-align:center}
+  .sb-btn{width:100%;text-align:center;font-size:15px;padding:14px}
 }
 @media(max-width:600px){
-  .problema-grid{grid-template-columns:1fr}
   .ugc-strip{grid-template-columns:repeat(3,1fr)}
-  .hero-edu-left h1{font-size:30px}
+  .productos-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- BAR -->
-<div class="bar">⏰ HOY: Envío gratis a todo el país &nbsp;·&nbsp; <span>25% OFF pagando con transferencia</span> &nbsp;·&nbsp; Cambios gratis si no te queda</div>
+<div class="bar">
+  <span>25% OFF</span> pagando con transferencia bancaria &nbsp;·&nbsp; Cambios gratis si no te queda
+</div>
 
-<!-- HEADER -->
 <header class="header">
   <a href="https://www.salvajeshoes.com.ar">
-    <img class="logo" src="https://acdn-us.mitiendanube.com/stores/005/877/397/themes/common/logo-1918409039-1759776123-e64634912a4f5656b8e5e93a9f15bd9c1759776123-480-0.webp"
+    <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/themes/common/logo-1918409039-1759776123-e64634912a4f5656b8e5e93a9f15bd9c1759776123-480-0.webp"
       alt="Salvaje Shoes" style="height:46px;width:auto"
       onerror="this.outerHTML='<span class=\'logo-text\'>salvaje shoes.</span>'">
   </a>
@@ -240,495 +269,347 @@ img{display:block;max-width:100%}
   <a href="#ver-modelos" class="btn-header">Ver zapatillas →</a>
 </header>
 
-<!-- PROGRESS NAV -->
 <nav class="progress-nav" id="progress-nav">
-  <div class="pn-item active" onclick="scrollTo('problema')"><span class="pn-num">01</span>El problema</div>
-  <div class="pn-item" onclick="scrollTo('como')"><span class="pn-num">02</span>Cómo funciona</div>
-  <div class="pn-item" onclick="scrollTo('resultados')"><span class="pn-num">03</span>Resultados</div>
-  <div class="pn-item" onclick="scrollTo('mitos')"><span class="pn-num">04</span>Mitos y realidad</div>
-  <div class="pn-item" onclick="scrollTo('paraquien')"><span class="pn-num">05</span>¿Para quién?</div>
-  <div class="pn-item" onclick="scrollTo('ver-modelos')"><span class="pn-num">06</span>Ver modelos</div>
+  <div class="pn-item active" onclick="scrollTo('descalzo')"><span class="pn-num">01</span>¿Qué es barefoot?</div>
+  <div class="pn-item" onclick="scrollTo('problema')"><span class="pn-num">02</span>El problema</div>
+  <div class="pn-item" onclick="scrollTo('como')"><span class="pn-num">03</span>Cómo funciona</div>
+  <div class="pn-item" onclick="scrollTo('resultados')"><span class="pn-num">04</span>Resultados</div>
+  <div class="pn-item" onclick="scrollTo('mitos')"><span class="pn-num">05</span>Mitos y realidad</div>
+  <div class="pn-item" onclick="scrollTo('paraquien')"><span class="pn-num">06</span>¿Para quién?</div>
+  <div class="pn-item" onclick="scrollTo('ver-modelos')"><span class="pn-num">07</span>Ver modelos</div>
+  <div class="pn-item" onclick="scrollTo('faq')"><span class="pn-num">08</span>Preguntas</div>
 </nav>
 
-<!-- HERO EDUCATIVO -->
+<!-- HERO -->
 <section class="hero-edu">
   <div class="hero-edu-left">
     <div class="tag">🦶 Guía completa · Calzado Barefoot</div>
     <h1>¿Por qué el calzado<br>que usás te está<br><em>haciendo daño?</em></h1>
-    <p class="hero-lead">Desde chicos nos dijeron que más amortiguación es mejor. Que el arco necesita soporte. Que las zapatillas de marca protegen el pie. <strong>La ciencia dice exactamente lo contrario.</strong> Esta guía te explica por qué — y qué podés hacer al respecto.</p>
-    <div class="hero-scroll-hint">
-      <span>↓</span>
-      Scrolleá para descubrir la verdad sobre el calzado
-    </div>
+    <p class="hero-lead">Durante años nos dijeron que más amortiguación es mejor. Que el arco necesita soporte. Que las zapatillas de marca protegen el pie. <strong>La ciencia dice exactamente lo contrario.</strong> Esta guía te explica por qué — y qué podés hacer al respecto.</p>
+    <div class="hero-scroll-hint"><span>↓</span> Seguí leyendo para descubrir la verdad sobre el calzado</div>
   </div>
-  <div class="hero-edu-right">
+  <div>
     <div class="hero-stat-card">
       <div class="hsc-row">
         <div class="hsc-num green">95%</div>
-        <div class="hsc-text">
-          <strong>de los bebés nacen con pies perfectamente sanos.</strong>
-          Arcos formados, dedos separados, movimiento natural.
-        </div>
+        <div class="hsc-text"><strong>de los bebés nacen con pies perfectamente sanos.</strong>Arcos formados, dedos separados, movimiento natural y libre.</div>
       </div>
       <div class="hsc-row">
         <div class="hsc-num red">77%</div>
-        <div class="hsc-text">
-          <strong>de los adultos desarrollan problemas en los pies.</strong>
-          Juanetes, fascitis plantar, dolor de espalda, dedos deformados.
-        </div>
+        <div class="hsc-text"><strong>de los adultos desarrollan problemas en los pies.</strong>Juanetes, fascitis plantar, dolor de espalda, dedos deformados.</div>
       </div>
       <div class="hsc-row">
-        <div class="hsc-num" style="font-size:32px;min-width:80px">¿Qué<br>pasó?</div>
-        <div class="hsc-text">
-          <strong>El calzado convencional.</strong>
-          En 20, 30 o 40 años de uso, fue cambiando lentamente la forma natural de tu pie — sin que te dieras cuenta.
-        </div>
+        <div class="hsc-num" style="font-size:28px;min-width:80px;padding-top:6px;color:#1a1a1a">¿Qué<br>pasó?</div>
+        <div class="hsc-text"><strong>El calzado convencional.</strong>En 20, 30 o 40 años de uso, fue cambiando lentamente la forma natural de tu pie — sin que te dieras cuenta.</div>
       </div>
       <p class="source-note">📊 Datos de estudios podológicos internacionales</p>
     </div>
   </div>
 </section>
 
-<!-- ── 1. EL PROBLEMA ── -->
-<section class="edu-section" id="problema">
-  <div class="section-eyebrow">01 · El problema</div>
-  <h2 class="section-h2">EL CALZADO TRADICIONAL<br>TIENE 4 PROBLEMAS GRAVES</h2>
+<!-- 01 QUÉ TIENE DE ESPECIAL -->
+<section class="intro-descalzo" id="descalzo">
+  <div class="section-eyebrow">01 · El origen</div>
+  <h2 class="section-h2">¿QUÉ TIENE DE ESPECIAL<br>ANDAR DESCALZO?</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75">El calzado convencional no fue diseñado para la salud de tu pie. Fue diseñado para la moda y la producción masiva. Estas son sus cuatro fallas estructurales — y lo que le hacen a tu cuerpo con cada paso.</p>
-
-  <div class="problema-grid">
-    <div class="prob-card">
-      <div class="prob-icon">👟</div>
-      <div class="prob-num">problema 01</div>
-      <h3>Puntera apretada</h3>
-      <p>Las zapatillas convencionales tienen una puntera que se estrecha hacia adelante. Con el tiempo, comprime los dedos y los obliga a estar en una posición que jamás elegirían solos.</p>
-      <div class="prob-consequence">❌ Genera juanetes, dedos en martillo y pérdida de fuerza en el pie</div>
+  <p style="font-size:16px;color:#2a4a38;max-width:700px;line-height:1.9;margin-bottom:0">El calzado minimalista contribuye a la salud de los pies, y <strong style="color:#1a1a1a">la salud de los pies es la base del bienestar general del cuerpo</strong>. Cuando los pies funcionan bien, todo lo demás se alinea: la postura, las rodillas, la cadera, la columna.</p>
+  <div class="intro-desc-grid">
+    <div class="idc-text">
+      <p>Los seres humanos caminamos descalzos durante miles de años. El pie tiene 26 huesos, 33 articulaciones y más de 100 músculos, tendones y ligamentos — todos diseñados para trabajar en conjunto, sentir el suelo y adaptarse a cada superficie.</p>
+      <div style="background:#fff;border-left:4px solid #4a9972;border-radius:0 12px 12px 0;padding:20px 24px;margin:20px 0;box-shadow:0 2px 12px rgba(74,153,114,.1)">
+        <p style="font-size:15px;color:#1a1a1a;font-weight:600;line-height:1.75;margin:0">El calzado barefoot — o calzado minimalista — busca reproducir esa experiencia: proteger el pie del suelo mientras le permite moverse con total libertad, como si no llevara nada puesto.<br><br>El resultado es un pie más fuerte, más ágil y con menos dolor. Un cuerpo más alineado. Y con el tiempo, una forma de moverse más natural y eficiente.</p>
+      </div>
     </div>
-    <div class="prob-card">
-      <div class="prob-icon">⬆️</div>
-      <div class="prob-num">problema 02</div>
-      <h3>Taco elevado</h3>
-      <p>Casi todo el calzado moderno tiene el talón más alto que la punta — incluso las zapatillas deportivas. Este desnivel desplaza el peso hacia adelante y altera toda la cadena muscular.</p>
-      <div class="prob-consequence">❌ Provoca dolor de rodillas, caderas y lumbar. Acorta el tendón de Aquiles</div>
-    </div>
-    <div class="prob-card">
-      <div class="prob-icon">🪨</div>
-      <div class="prob-num">problema 03</div>
-      <h3>Suela rígida</h3>
-      <p>Una suela que no se dobla ni flexiona obliga al pie a comportarse como una palanca rígida. Los músculos del pie dejan de trabajar y se atrofian progresivamente.</p>
-      <div class="prob-consequence">❌ Debilita los músculos intrínsecos del pie. El pie "se olvida" de cómo moverse</div>
-    </div>
-    <div class="prob-card">
-      <div class="prob-icon">🧽</div>
-      <div class="prob-num">problema 04</div>
-      <h3>Amortiguación excesiva</h3>
-      <p>El cerebro necesita información del suelo para coordinar cada paso. La amortiguación artificial interrumpe esa señal y hace que pisemos más fuerte de lo necesario.</p>
-      <div class="prob-consequence">❌ Genera pisadas incorrectas que impactan con más fuerza en rodillas y caderas</div>
+    <div class="idc-pillars">
+      <div class="idc-pillar"><div class="ip-icon">🦶</div><div><h4>Pies más fuertes</h4><p>Los músculos del pie se activan con cada paso. Sin amortiguación artificial que haga el trabajo por ellos.</p></div></div>
+      <div class="idc-pillar"><div class="ip-icon">🧍</div><div><h4>Mejor postura</h4><p>La suela plana (zero drop) alinea naturalmente tobillo, rodilla, cadera y columna desde la base.</p></div></div>
+      <div class="idc-pillar"><div class="ip-icon">😌</div><div><h4>Menos dolor</h4><p>Al atacar las causas biomecánicas, muchas personas notan una reducción del dolor en pies, rodillas y espalda.</p></div></div>
+      <div class="idc-pillar"><div class="ip-icon">🌿</div><div><h4>Movimiento natural</h4><p>La puntera amplia permite que los dedos se expandan como lo hacen naturalmente, devolviendo la estabilidad perdida.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA INTERMEDIO 1 -->
+<!-- 02 EL PROBLEMA -->
+<section class="edu-section" id="problema">
+  <div class="section-eyebrow">02 · El problema</div>
+  <h2 class="section-h2">PERO ENTONCES... ¿QUÉ HAY<br>DE MALO CON MI CALZADO<br>DE TODA LA VIDA?</h2>
+  <div class="divider-line"></div>
+  <p style="font-size:15px;color:#666;max-width:700px;line-height:1.8">El calzado convencional fue diseñado para la moda sin respetar la forma natural de nuestros pies. Con solo mirar su forma te vas a dar cuenta que algo no está bien. Te enumeramos 4 fallas estructurales — y lo que le hacen a tu cuerpo cuando las tenés puestas.</p>
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="prob-track">
+      <div class="prob-card"><div class="prob-icon">👟</div><div class="prob-num">problema 01</div><h3>Puntera apretada</h3><p>Las zapatillas convencionales tienen una puntera muy estrecha. Con el tiempo, comprime los dedos y los obliga a estar en una posición antinatural que los deforma.</p><div class="prob-consequence">❌ Genera juanetes, dedos en martillo y pérdida de fuerza en el pie</div></div>
+      <div class="prob-card"><div class="prob-icon">⬆️</div><div class="prob-num">problema 02</div><h3>Taco elevado</h3><p>Casi todo el calzado moderno tiene el talón más alto que la punta — incluso las zapatillas deportivas. Este desnivel desplaza el peso hacia adelante y altera toda la cadena muscular.</p><div class="prob-consequence">❌ Provoca dolor de rodillas, caderas y lumbar. Acorta el tendón de Aquiles</div></div>
+      <div class="prob-card"><div class="prob-icon">🧱</div><div class="prob-num">problema 03</div><h3>Suela rígida</h3><p>Una suela que no se dobla ni flexiona obliga al pie a comportarse como un ladrillo. Los músculos del pie dejan de trabajar y se atrofian progresivamente con los años, además de hacerte más vulnerable a torceduras.</p><div class="prob-consequence">❌ Atrofia los músculos del pie y aumenta el riesgo de lesiones</div></div>
+      <div class="prob-card"><div class="prob-icon">🧽</div><div class="prob-num">problema 04</div><h3>Amortiguación excesiva</h3><p>El cerebro necesita información del suelo para coordinar cada paso. La amortiguación artificial interrumpe esa señal y hace que pisemos más fuerte de lo necesario.</p><div class="prob-consequence">❌ Genera pisadas incorrectas con más impacto en rodillas y cadera</div></div>
+    </div>
+    <div class="carousel-dots" id="prob-dots">
+      <button class="carousel-dot active" onclick="goToSlide('prob-track','prob-dots',0)"></button>
+      <button class="carousel-dot" onclick="goToSlide('prob-track','prob-dots',1)"></button>
+      <button class="carousel-dot" onclick="goToSlide('prob-track','prob-dots',2)"></button>
+      <button class="carousel-dot" onclick="goToSlide('prob-track','prob-dots',3)"></button>
+    </div>
+  </div>
+</section>
+
 <div class="cta-mid">
-  <div class="cta-mid-left">
-    <h2>¿Ya reconocés alguno<br>de estos problemas?</h2>
-    <p>Más de 20.000 argentinos encontraron en Salvaje Shoes la solución. Seguí leyendo para entender cómo funciona — o mirá los modelos ahora.</p>
-  </div>
-  <div class="cta-mid-right">
-    <a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green">Ver modelos →</a>
-    <div class="cta-trust-line">Envío gratis · Cambio gratis · 12 cuotas s/int.</div>
-  </div>
+  <div class="cta-mid-left"><h2>¿Ya reconocés alguno de estos problemas?</h2><p>Más de 20.000 personas encontraron en Salvaje Shoes la solución. Seguí leyendo para entender cómo funciona — o mirá los modelos ahora.</p></div>
+  <div class="cta-mid-right"><a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green">Ver modelos →</a><div class="cta-trust-line">Cambio gratis · Cuotas sin interés</div></div>
 </div>
 
-<!-- ── 2. CÓMO FUNCIONA ── -->
+<!-- 03 CÓMO FUNCIONA -->
 <section class="edu-section" id="como">
-  <div class="section-eyebrow">02 · Cómo funciona</div>
+  <div class="section-eyebrow">03 · Cómo funciona</div>
   <h2 class="section-h2">EL CALZADO BAREFOOT:<br>4 PRINCIPIOS QUE LO CAMBIAN TODO</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75;margin-bottom:0">Barefoot no es una moda — es volver al movimiento para el que tu pie fue diseñado. Cada característica del calzado Salvaje tiene una razón basada en anatomía y biomecánica.</p>
-
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8;margin-bottom:0">Barefoot no es una moda — es volver al movimiento para el que tu pie fue diseñado. Cada característica del calzado Salvaje tiene una razón basada en anatomía y biomecánica.</p>
   <div class="como-inner">
     <div class="como-steps">
-      <div class="como-step active">
-        <div class="cs-line">
-          <div class="cs-dot">1</div>
-          <div class="cs-vert"></div>
-        </div>
-        <div class="cs-content">
-          <h3>Puntera amplia — Los dedos respiran</h3>
-          <p>La puntera de Salvaje es ancha al frente — como la forma real de tu pie. Los dedos pueden expandirse con cada paso, trabajar independientemente y distribuir el peso de forma natural.</p>
-          <div class="cs-highlight">✅ En 60 días: 96% de los clientes notó menos dolor en dedos y juanetes</div>
-        </div>
-      </div>
-      <div class="como-step">
-        <div class="cs-line">
-          <div class="cs-dot">2</div>
-          <div class="cs-vert"></div>
-        </div>
-        <div class="cs-content">
-          <h3>Zero Drop — Suela completamente plana</h3>
-          <p>El talón y la punta están exactamente a la misma altura. Sin desnivel artificial. Tu postura se alinea desde los pies hacia arriba: tobillo, rodilla, cadera, columna.</p>
-          <div class="cs-highlight">✅ En 60 días: 76% notó tobillos y pantorrillas más fuertes</div>
-        </div>
-      </div>
-      <div class="como-step">
-        <div class="cs-line">
-          <div class="cs-dot">3</div>
-          <div class="cs-vert"></div>
-        </div>
-        <div class="cs-content">
-          <h3>Suela de 3.5mm — Flexible y protectora</h3>
-          <p>Fina lo suficiente para sentir el suelo y activar los músculos. Resistente lo suficiente para protegerte de superficies duras o cortantes. El equilibrio exacto entre sensación y protección.</p>
-          <div class="cs-highlight">✅ Suela de caucho flexible · protección real sin sacrificar movimiento</div>
-        </div>
-      </div>
-      <div class="como-step">
-        <div class="cs-line">
-          <div class="cs-dot">4</div>
-          <div class="cs-vert"></div>
-        </div>
-        <div class="cs-content">
-          <h3>Sin amortiguación artificial — El pie trabaja</h3>
-          <p>Sin foam, sin gel, sin sistemas de amortiguación que enmascaren el impacto. Tus músculos absorben el impacto solos — y se fortalecen con cada paso que das.</p>
-          <div class="cs-highlight">✅ En 60 días: 87% notó menos cansancio en pies y piernas</div>
-        </div>
-      </div>
+      <div class="como-step active"><div class="cs-line"><div class="cs-dot">1</div><div class="cs-vert"></div></div><div class="cs-content"><h3>Puntera amplia — Los dedos respiran</h3><p>La puntera de Salvaje es ancha al frente — como la forma real de tu pie. Los dedos pueden expandirse con cada paso, trabajar independientemente y distribuir el peso de forma natural.</p><div class="cs-highlight">✅ En 60 días: 96% notó menos dolor en dedos y juanetes</div></div></div>
+      <div class="como-step"><div class="cs-line"><div class="cs-dot">2</div><div class="cs-vert"></div></div><div class="cs-content"><h3>Zero Drop — Suela completamente plana</h3><p>El talón y la punta están exactamente a la misma altura. Sin desnivel artificial. Tu postura se alinea desde los pies hacia arriba: tobillo, rodilla, cadera, columna.</p><div class="cs-highlight">✅ En 60 días: 76% notó tobillos y pantorrillas más fuertes</div></div></div>
+      <div class="como-step"><div class="cs-line"><div class="cs-dot">3</div><div class="cs-vert"></div></div><div class="cs-content"><h3>Suela de 3.5mm — Flexible y protectora</h3><p>Fina lo suficiente para sentir el suelo y activar los músculos. Resistente lo suficiente para protegerte de superficies duras. El equilibrio exacto entre sensación y protección.</p><div class="cs-highlight">✅ Suela de caucho flexible · protección real sin sacrificar movimiento</div></div></div>
+      <div class="como-step"><div class="cs-line"><div class="cs-dot">4</div></div><div class="cs-content"><h3>Sin amortiguación artificial — El pie trabaja</h3><p>Sin foam ni gel. Tus músculos absorben el impacto solos — y se fortalecen con cada paso que das. Es la diferencia entre un músculo activo y uno apoyado.</p><div class="cs-highlight">✅ En 60 días: 87% notó menos cansancio en pies y piernas</div></div></div>
     </div>
-    <div class="como-right">
+    <div>
       <div class="comp-visual">
-        <div class="cv-header">
-          <div class="salvaje">🦅 Salvaje Shoes</div>
-          <div>Calzado tradicional</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Puntera amplia</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Puntera apretada</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Zero Drop (0mm)</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Taco elevado</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Suela flexible 3.5mm</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Suela rígida</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Fortalece los músculos</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Los atrofia</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Alinea la postura</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">La altera</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Reduce el dolor</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Puede causarlo</div></div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">100% vegano</div></div>
-          <div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Varía</div></div>
-        </div>
+        <div class="cv-header"><div class="salvaje">🦅 Salvaje Shoes</div><div>Calzado tradicional</div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Puntera amplia</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Puntera apretada</div></div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Zero Drop (0mm)</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Taco elevado</div></div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Suela flexible</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Suela rígida</div></div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Fortalece músculos</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Los atrofia</div></div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Alinea la postura</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">La altera</div></div></div>
+        <div class="cv-row"><div class="cv-cell good"><div class="cv-icon">✅</div><div class="cv-label">Reduce el dolor</div></div><div class="cv-cell"><div class="cv-icon">❌</div><div class="cv-label">Puede causarlo</div></div></div>
       </div>
-      <div style="margin-top:16px;padding:16px;background:#e8f8f0;border:1px solid #a8dfc0;font-size:13px;color:#27ae60;font-weight:700;text-align:center">
-        🦅 Desarrollado junto a podólogos europeos
-      </div>
+      <div style="margin-top:14px;padding:14px 16px;background:#edf7f2;border:1px solid #b8d8c8;border-radius:10px;font-size:13px;color:#4a9972;font-weight:700;text-align:center">🇪🇺 Desarrollado junto a podólogos europeos</div>
     </div>
   </div>
 </section>
 
-<!-- ── 3. RESULTADOS ── -->
+<!-- 04 RESULTADOS -->
 <section class="edu-section" id="resultados" style="background:#f9f9f9">
-  <div class="section-eyebrow">03 · Los resultados</div>
+  <div class="section-eyebrow">04 · Los resultados</div>
   <h2 class="section-h2">🚀 RESULTADOS EN 60 DÍAS</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75">No te pedimos que confíes en nosotros. Te mostramos lo que dicen los números. Encuesta realizada a 700 clientes después de 2 meses de uso continuo.</p>
-
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8">No te pedimos que confíes en nosotros. Te mostramos lo que dicen los números de una encuesta a 700 clientes después de 2 meses de uso continuo.</p>
   <div class="res-top">
-    <div class="res-stat-card">
-      <div class="rsc-circle">
-        <svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="rsc-bg" cx="50" cy="50" r="42"/>
-          <circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="254 264"/>
-        </svg>
-        <div class="rsc-num">96%</div>
-      </div>
-      <div class="rsc-text">
-        <strong>Menos dolor en dedos y juanetes</strong>
-        gracias a la puntera amplia que permite que el pie se expanda de forma natural.
-      </div>
-    </div>
-    <div class="res-stat-card">
-      <div class="rsc-circle">
-        <svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="rsc-bg" cx="50" cy="50" r="42"/>
-          <circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="230 264"/>
-        </svg>
-        <div class="rsc-num">87%</div>
-      </div>
-      <div class="rsc-text">
-        <strong>Menos cansancio en pies y piernas</strong>
-        durante las actividades diarias.
-      </div>
-    </div>
-    <div class="res-stat-card">
-      <div class="rsc-circle">
-        <svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="rsc-bg" cx="50" cy="50" r="42"/>
-          <circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="200 264"/>
-        </svg>
-        <div class="rsc-num">76%</div>
-      </div>
-      <div class="rsc-text">
-        <strong>Tobillos y pantorrillas más fuertes</strong>
-        gracias al zero drop (suela plana que equilibra la presión).
-      </div>
-    </div>
+    <div class="res-stat-card"><div class="rsc-circle"><svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100"><circle class="rsc-bg" cx="50" cy="50" r="42"/><circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="254 264"/></svg><div class="rsc-num">96%</div></div><div class="rsc-text"><strong>Menos dolor en dedos y juanetes</strong>gracias a la puntera amplia que permite que el pie se expanda de forma natural.</div></div>
+    <div class="res-stat-card"><div class="rsc-circle"><svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100"><circle class="rsc-bg" cx="50" cy="50" r="42"/><circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="230 264"/></svg><div class="rsc-num">87%</div></div><div class="rsc-text"><strong>Menos cansancio en pies y piernas</strong>durante las actividades diarias.</div></div>
+    <div class="res-stat-card"><div class="rsc-circle"><svg class="rsc-svg" width="100" height="100" viewBox="0 0 100 100"><circle class="rsc-bg" cx="50" cy="50" r="42"/><circle class="rsc-fill" cx="50" cy="50" r="42" stroke-dasharray="200 264"/></svg><div class="rsc-num">76%</div></div><div class="rsc-text"><strong>Tobillos y pantorrillas más fuertes</strong>gracias al zero drop (suela plana que equilibra la presión).</div></div>
   </div>
-  <p class="res-source">📊 En base a una encuesta realizada a 700 clientes, sabemos que en 60 días usando nuestro calzado, la salud de sus pies mejoró notablemente gracias a la puntera amplia y al zero drop.</p>
-
-  <div class="res-reviews">
-    <div class="reviews-meta">
-      <div class="rm-score">4.8</div>
-      <div class="rm-right">
-        <div class="rm-stars">★★★★★</div>
-        <div class="rm-count">8.167 reseñas verificadas 🚀 · +20.000 argentinos confían en nosotros</div>
-      </div>
-    </div>
-    <div class="reviews-scroll">
-      <div class="rev-card">
-        <div class="rc-stars">★★★★★</div>
-        <div class="rc-title">"Mis pantorrillas más fuertes"</div>
-        <div class="rc-body">Después de unos meses, camino sin dolor. Tras un año con barefoot, mis pantorrillas están más fuertes y los juanetes pequeños empezaron a retraerse. Vale la pena probar.</div>
-        <div class="rc-author">Julia W. — Compra verificada</div>
-      </div>
-      <div class="rev-card">
-        <div class="rc-stars">★★★★★</div>
-        <div class="rc-title">"Sin dolor en viajes largos"</div>
-        <div class="rc-body">Caminé 17.000 pasos por día durante 14 días. En otros calzados me aparecía dolor en el metatarso. Con Salvaje caminé 14 días seguidos y estuve 100% cómodo.</div>
-        <div class="rc-author">Miguel W. — Compra verificada</div>
-      </div>
-      <div class="rev-card">
-        <div class="rc-stars">★★★★★</div>
-        <div class="rc-title">"A mi mamá por fin no le duele"</div>
-        <div class="rc-body">Mi mamá tiene artritis reumatoidea. Nunca conseguíamos un calzado que no le doliera. Con Salvaje pasamos a su talle real. No le duele nada. ¡Gracias!</div>
-        <div class="rc-author">Carla G. — Compra verificada</div>
-      </div>
-    </div>
+  <p class="res-source">📊 Encuesta realizada a 700 clientes · 60 días de uso continuo</p>
+  <div class="reviews-meta">
+    <div class="rm-score">4.8</div>
+    <div class="rm-right"><div class="rm-stars">★★★★★</div><div class="rm-count">8.167 reseñas verificadas 🚀 · +20.000 personas confían en nosotros</div></div>
+  </div>
+  <div class="reviews-scroll">
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"El producto es buenísimo, tengo juanetes y un dedo martillo. Me lo recomendó mi profesora de pilates y estoy muy conforme. Es como caminar mejor que caminar descalza. Desde que me los compré es un antes y un después. Lo recomiendo 100%."</div><div class="rc-author">María Inés E.</div><div class="rc-product">Aguila Guerrera®</div></div>
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"Soy veterinaria, ando todo el día parada. Estoy volviendo del trabajo con las zapatillas, caminé un montón y no tuve ningún problema, ni siquiera con la adaptación. Estoy fascinada y recomendándola a todo el mundo."</div><div class="rc-author">Flavia S.</div><div class="rc-product">Aguila Guerrera®</div></div>
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"Es literalmente como caminar descalza, muy cómodo, el pie se siente totalmente libre. Hice actividad al aire libre y noté mucho la diferencia en la actividad muscular. Siento que activé músculos que nunca usaba. Tan contenta que me compré otro par."</div><div class="rc-author">Nora S.</div><div class="rc-product">Diamante Noche®</div></div>
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"Excelente producto. Tuve un accidente que afectó mi tobillo y pie, los calzados convencionales siempre me causaban dolor e hinchazón. Pero con estas zapatillas no siento molestias. Son increíblemente cómodas. Las recomiendo totalmente."</div><div class="rc-author">Laura F. B.</div><div class="rc-product">Shade®</div></div>
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"Los elegí para mi caminata diaria de 6km y resultaron más cómodos y confortables de lo que esperaba. Básicamente brindan la experiencia de caminar descalzo con el pie protegido. A mi criterio son altamente recomendables."</div><div class="rc-author">María Antonia V.</div><div class="rc-product">Bolt Green®</div></div>
+    <div class="rev-card"><div class="rc-stars">★★★★★</div><div class="rc-body">"Desde hace años uso calzado barefoot y acá en Argentina es muy difícil encontrar. Lo uso todos los días y siento mejor agarre y fuerza en las piernas. Es realmente un camino de ida — se siente la mejoría no solo en pies y piernas sino en todo el cuerpo."</div><div class="rc-author">Margarita B.</div><div class="rc-product">Onyx®</div></div>
   </div>
 </section>
 
-<!-- UGC STRIP -->
+<!-- UGC STRIP — fotos reales de clientes -->
 <div class="ugc-strip">
-  <img src="https://i.ibb.co/wFPHcHbL/IMG-5013-0fd2b735-c971-4e6e-a693-c83a8b70647c.jpg" alt="" onerror="this.outerHTML='<div>🦶</div>'">
-  <img src="https://i.ibb.co/Wv34ZB1Q/Whats-App-Image-2025-08-27-at-11-06-18.jpg" alt="" onerror="this.outerHTML='<div>👟</div>'">
-  <img src="https://i.ibb.co/sJphJ9Nj/Screenshot-2024-08-01-alle-17-19-31.jpg" alt="" onerror="this.outerHTML='<div>🌿</div>'">
-  <img src="https://i.ibb.co/j9QFq4Nz/edited.jpg" alt="" onerror="this.outerHTML='<div>💪</div>'">
-  <img src="https://i.ibb.co/35pkLsJj/IMG-5014-1.webp" alt="" onerror="this.outerHTML='<div>🏃</div>'">
-  <img src="https://i.ibb.co/nsv7gRZ2/IMG-7281-126103e0-85ea-45ae-866a-9b3046b1447f.webp" alt="" onerror="this.outerHTML='<div>🦶</div>'">
-  <img src="https://i.ibb.co/XkpCDQrr/Whats-App-Image-2025-08-27-at-11-06-38.jpg" alt="" onerror="this.outerHTML='<div>✅</div>'">
+  <img src="fotos/ugc1.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#edf7f2';this.style.minHeight='80px'">
+  <img src="fotos/ugc2.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#dff0e8';this.style.minHeight='80px'">
+  <img src="fotos/ugc3.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#d0ead8';this.style.minHeight='80px'">
+  <img src="fotos/ugc4.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#c8e4d0';this.style.minHeight='80px'">
+  <img src="fotos/ugc5.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#b8d8c8';this.style.minHeight='80px'">
+  <img src="fotos/ugc6.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#a8d0c0';this.style.minHeight='80px'">
+  <img src="fotos/ugc7.jpg" alt="cliente usando Salvaje Shoes" onerror="this.style.background='#98c8b8';this.style.minHeight='80px'">
 </div>
 
-<!-- ── 4. MITOS ── -->
+<!-- 05 MITOS -->
 <section class="edu-section" id="mitos">
-  <div class="section-eyebrow">04 · Mitos y realidad</div>
+  <div class="section-eyebrow">05 · Mitos y realidad</div>
   <h2 class="section-h2">BASTA DE MITOS: LA REALIDAD<br>SOBRE USAR BAREFOOT</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75">¿Y si el soporte que creías necesitar es lo que te está debilitando? Olvidate de los mitos y deja que tus pies vuelvan a ser tu guía. Tu cuerpo conoce el camino.</p>
-
-  <div class="mitos-grid">
-    <div class="mito-card">
-      <div class="mc-img">
-        <img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dd-1210-7cce-a6a8-90d26ba421fb.jpg" alt="mito 1" onerror="this.parentElement.style.background='#e8f5ee';this.remove()">
-      </div>
-      <div class="mc-body">
-        <div class="mc-mito-tag">❌ Mito #1</div>
-        <h3>"El pie necesita soporte de arco"</h3>
-        <div class="mc-realidad-tag">✅ La realidad</div>
-        <p>El arco del pie es un sistema muscular dinámico, no una estructura que necesita sostén externo. El soporte artificial hace lo contrario: le saca el trabajo al arco, lo debilita y crea dependencia. El calzado barefoot restaura la función natural del pie para fortalecer los arcos y aliviar la fascitis plantar.</p>
-        <a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a>
-      </div>
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8">¿Y si el soporte que creías necesitar es lo que te está debilitando? Olvidate de los mitos y deja que tus pies vuelvan a ser tu guía. Tu cuerpo conoce el camino.</p>
+  <div class="carousel-wrap" style="margin-top:40px">
+    <div class="mitos-grid" id="mitos-track">
+      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dd-1210-7cce-a6a8-90d26ba421fb.jpg" alt="mito 1" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #1</div><h3>"El pie necesita soporte de arco"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>El arco del pie es un sistema muscular dinámico. El soporte artificial le saca el trabajo al arco, lo debilita y crea dependencia. El calzado barefoot restaura la función natural para fortalecer los arcos y aliviar la fascitis plantar.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43db-9b42-7cce-a6a8-79c155be10f7.jpg" alt="mito 2" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #2</div><h3>"Es malo para pies planos"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Los pies planos frecuentemente son consecuencia del calzado convencional. El calzado barefoot permite que tu arco y músculos se desarrollen libremente, desbloqueando tu movimiento natural. No necesitás plantillas.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dc-2f43-7cce-a6a8-81fa6706588a.jpg" alt="mito 3" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #3</div><h3>"Las suelas finas me dolerán"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Nuestras suelas te protegen de superficies duras mientras te dejan sentir el suelo. Los primeros días puede haber adaptación — es el pie activando músculos dormidos. Una transición gradual despertará tus pies sin dolor.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
+      <div class="mito-card"><div class="mc-img"><img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/d900a81c-0e6e-45f6-b82e-9307a89580f5-92c2468c3d18f04a8b17437886165412-1024-1024.webp" alt="mito 4" onerror="this.parentElement.style.background='#edf7f2';this.remove()"></div><div class="mc-body"><div class="mc-mito-tag">❌ Mito #4</div><h3>"El barefoot limita el rendimiento"</h3><div class="mc-realidad-tag">✅ La realidad</div><p>Promueve el equilibrio natural y la fuerza desde la base. Desde el yoga hasta el levantamiento de pesas, personas de todas las edades entrenan y mejoran usando barefoot. La transición activa músculos que el calzado convencional mantuvo dormidos durante años.</p><a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a></div></div>
     </div>
-    <div class="mito-card">
-      <div class="mc-img">
-        <img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43db-9b42-7cce-a6a8-79c155be10f7.jpg" alt="mito 2" onerror="this.parentElement.style.background='#e8f5ee';this.remove()">
-      </div>
-      <div class="mc-body">
-        <div class="mc-mito-tag">❌ Mito #2</div>
-        <h3>"Es malo para pies planos"</h3>
-        <div class="mc-realidad-tag">✅ La realidad</div>
-        <p>Los pies planos frecuentemente son consecuencia del calzado convencional, no una condición congénita. No necesitás plantillas para usar barefoot. El calzado permite que tu arco y músculos se muevan libremente y se desarrollen, desbloqueando tu movimiento natural.</p>
-        <a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a>
-      </div>
-    </div>
-    <div class="mito-card">
-      <div class="mc-img">
-        <img src="https://cdn-blog-backend.tiendanube.com/blogs/019/52f/175/80f7776ba33959a3cae844c/media/019c43dc-2f43-7cce-a6a8-81fa6706588a.jpg" alt="mito 3" onerror="this.parentElement.style.background='#e8f5ee';this.remove()">
-      </div>
-      <div class="mc-body">
-        <div class="mc-mito-tag">❌ Mito #3</div>
-        <h3>"Las suelas finas me dolerán"</h3>
-        <div class="mc-realidad-tag">✅ La realidad</div>
-        <p>Nuestras suelas te permiten sentir el suelo mientras te protegen de superficies duras o cortantes. Los primeros días puede haber adaptación — es el pie activando músculos que estuvieron dormidos. Una transición gradual despertará tus pies sin causar dolor.</p>
-        <a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a>
-      </div>
-    </div>
-    <div class="mito-card">
-      <div class="mc-img">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/d900a81c-0e6e-45f6-b82e-9307a89580f5-92c2468c3d18f04a8b17437886165412-1024-1024.webp" alt="mito 4" onerror="this.parentElement.style.background='#e8f5ee';this.remove()">
-      </div>
-      <div class="mc-body">
-        <div class="mc-mito-tag">❌ Mito #4</div>
-        <h3>"El barefoot limita el rendimiento"</h3>
-        <div class="mc-realidad-tag">✅ La realidad</div>
-        <p>Promueve el equilibrio natural y la fuerza desde la base. Desde el surf hasta el levantamiento de pesas, atletas de élite viven, entrenan y rompen récords usando barefoot. La Aguila Guerrera® fue diseñada específicamente para el gym: sentadillas, peso muerto y funcional.</p>
-        <a href="https://www.salvajeshoes.com.ar/blog/" class="mc-link">Leer más en el blog →</a>
-      </div>
+    <div class="carousel-dots" id="mitos-dots" style="margin-top:20px;display:none">
+      <button class="carousel-dot active" onclick="goToMito(0)"></button>
+      <button class="carousel-dot" onclick="goToMito(1)"></button>
+      <button class="carousel-dot" onclick="goToMito(2)"></button>
+      <button class="carousel-dot" onclick="goToMito(3)"></button>
     </div>
   </div>
 </section>
 
-<!-- CTA INTERMEDIO 2 -->
 <div class="cta-mid">
-  <div class="cta-mid-left">
-    <h2>¿Listo para dar el primer paso?</h2>
-    <p>8.167 argentinos ya lo verificaron. El primer par tiene cambio gratis si no te queda el talle. El único riesgo es no probarlo.</p>
-  </div>
-  <div class="cta-mid-right">
-    <a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green">Ver todos los modelos →</a>
-    <div class="cta-trust-line">Envío gratis · Cambio gratis · 12 cuotas s/int.</div>
-  </div>
+  <div class="cta-mid-left"><h2>¿Listo para dar el primer paso?</h2><p>Más de 20.000 personas ya lo verificaron. El primer par tiene cambio gratis si no te queda el talle. El único riesgo es no probarlo.</p></div>
+  <div class="cta-mid-right"><a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green">Ver todos los modelos →</a><div class="cta-trust-line">Cambio gratis · Cuotas sin interés</div></div>
 </div>
 
-<!-- ── 5. PARA QUIÉN ── -->
+<!-- 06 PARA QUIÉN -->
 <section class="edu-section" id="paraquien">
-  <div class="section-eyebrow">05 · ¿Para quién es?</div>
+  <div class="section-eyebrow">06 · ¿Para quién es?</div>
   <h2 class="section-h2">SALVAJE ES PARA VOS SI...</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75">El calzado barefoot no es solo para runners o deportistas extremos. Es para cualquier persona que camina, que está de pie muchas horas, o que quiere que sus pies estén mejor que hace 10 años.</p>
-
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8">El calzado barefoot no es solo para runners. Es para cualquier persona que camina, que está de pie muchas horas, o que quiere que sus pies estén mejor que hace 10 años.</p>
   <div class="paraquien-grid">
-    <div class="pq-card">
-      <div class="pq-icon">🏋️</div>
-      <h3>Hacés deporte o vas al gym</h3>
-      <p>La suela plana zero drop mejora la mecánica de todos los ejercicios de fuerza. Más estabilidad, mejor transmisión de fuerza al suelo, activación muscular correcta.</p>
-      <ul class="pq-bullets">
-        <li>Sentadillas y peso muerto</li>
-        <li>Funcional y crossfit</li>
-        <li>Trail running y trekking</li>
-        <li>Gimnasio en general</li>
-      </ul>
-    </div>
-    <div class="pq-card">
-      <div class="pq-icon">😣</div>
-      <h3>Tenés dolor en los pies o piernas</h3>
-      <p>Juanetes, fascitis plantar, dolor metatarsal, cansancio en las piernas, dolor de rodillas o lumbar. El calzado barefoot ataca las causas, no solo los síntomas.</p>
-      <ul class="pq-bullets">
-        <li>Juanetes (hallux valgus)</li>
-        <li>Fascitis plantar</li>
-        <li>Dolor metatarsal</li>
-        <li>Cansancio en piernas al final del día</li>
-      </ul>
-    </div>
-    <div class="pq-card">
-      <div class="pq-icon">🚶</div>
-      <h3>Caminás mucho o estás parado</h3>
-      <p>Docentes, enfermeros, gastronómicos, vendedores. Si pasás muchas horas de pie, un calzado que trabaje con tu pie en lugar de en su contra hace una diferencia enorme.</p>
-      <ul class="pq-bullets">
-        <li>Muchas horas de pie</li>
-        <li>Caminatas largas o viajes</li>
-        <li>Uso diario ciudad</li>
-        <li>Trabajo de pie todo el día</li>
-      </ul>
-    </div>
+    <div class="pq-card"><div class="pq-icon">🏃</div><h3>Hacés actividad física</h3><p>La suela plana zero drop mejora la mecánica de todos los ejercicios. Más estabilidad, mejor transmisión de fuerza, activación muscular correcta.</p><ul class="pq-bullets"><li>Pilates y yoga</li><li>Caminatas y trekking</li><li>Gimnasio y funcional</li><li>Trail running</li></ul></div>
+    <div class="pq-card"><div class="pq-icon">😣</div><h3>Tenés dolor en pies o piernas</h3><p>Juanetes, fascitis plantar, dolor metatarsal, cansancio en las piernas, dolor de rodillas o lumbar. El calzado barefoot ataca las causas, no solo los síntomas.</p><ul class="pq-bullets"><li>Juanetes (hallux valgus)</li><li>Fascitis plantar</li><li>Dolor metatarsal</li><li>Cansancio al final del día</li></ul></div>
+    <div class="pq-card"><div class="pq-icon">🚶</div><h3>Estás mucho tiempo de pie</h3><p>Docentes, enfermeras, comerciantes, profesionales de la salud. Si pasás muchas horas parado/a, un calzado que trabaje con tu pie hace una diferencia enorme.</p><ul class="pq-bullets"><li>Muchas horas de pie</li><li>Caminatas largas o viajes</li><li>Uso diario en la ciudad</li><li>Trabajo de pie todo el día</li></ul></div>
   </div>
 </section>
 
-<!-- ── 6. VER MODELOS ── -->
+<!-- 07 VER MODELOS -->
 <section class="edu-section" id="ver-modelos" style="background:#f9f9f9">
-  <div class="section-eyebrow">06 · Por dónde empezar</div>
+  <div class="section-eyebrow">07 · Por dónde empezar</div>
   <h2 class="section-h2">ELEGÍ TU PRIMER PAR SALVAJE</h2>
   <div class="divider-line"></div>
-  <p style="font-size:15px;color:#555;max-width:680px;line-height:1.75;margin-bottom:40px">Todos los modelos tienen envío gratis, cambio gratis y 12 cuotas sin interés. Si no sabés por cuál empezar, estos tres son los más elegidos:</p>
+  <p style="font-size:15px;color:#666;max-width:680px;line-height:1.8;margin-bottom:40px">Todos los modelos tienen cambio gratis y cuotas sin interés. Si no sabés por cuál empezar, estos son los más elegidos:</p>
+  <div class="productos-grid">
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-
-    <a href="https://www.salvajeshoes.com.ar/productos/aguila-guerrera-zapatilla-barefoot-pie-descalzo-zero-drop-planas-gimnasio/" style="border:1px solid #e8e8e8;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#27ae60'" onmouseout="this.style.borderColor='#e8e8e8'">
-      <div style="aspect-ratio:1;overflow:hidden;background:#f5f5f5;position:relative">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/e07928a4-42b8-4e60-be0d-04b9d552ba5b-5b5444d445acb70eb317437886164340-480-0.webp" alt="Aguila Guerrera" style="width:100%;height:100%;object-fit:cover">
-        <span style="position:absolute;top:10px;left:10px;background:#27ae60;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;text-transform:uppercase;letter-spacing:.06em">⭐ Más vendido</span>
+    <!-- Aero White -->
+    <a href="https://www.salvajeshoes.com.ar/productos/aero-white/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-white-480-0.webp" alt="Aero White"
+          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+        <div class="prod-img-placeholder" style="display:none">Aero White®<br>🤍</div>
+        <span class="prod-badge">🏙️ Look urbano</span>
       </div>
-      <div style="padding:18px">
-        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-weight:600">Deportivas · Gimnasio</div>
-        <div style="font-size:16px;font-weight:800;margin-bottom:12px;color:#1a1a1a">Aguila Guerrera®</div>
-        <div style="background:#e8f8f0;border:1px solid #a8dfc0;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:6px">
-          <span style="background:#27ae60;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;text-transform:uppercase">25% OFF</span>
-          <span style="font-size:15px;font-weight:800;color:#27ae60">$117.000</span>
-        </div>
-        <div style="font-size:12px;color:#888;margin-bottom:3px">Precio normal: $156.000</div>
-        <div style="font-size:12px;color:#666">12 cuotas de $23.088</div>
-        <div style="background:#1a1a1a;color:#fff;padding:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:14px">Ver modelo →</div>
+      <div class="prod-info">
+        <div class="prod-cat">Casual · Unisex</div>
+        <div class="prod-name">Aero White®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
+        <div class="prod-price-normal">Ver precio en tienda</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
       </div>
     </a>
 
-    <a href="https://www.salvajeshoes.com.ar/productos/rayo-boreal-zapatilla-minimalista-plana-pie-descalzo-cero-drop-barefoot/" style="border:1px solid #e8e8e8;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#27ae60'" onmouseout="this.style.borderColor='#e8e8e8'">
-      <div style="aspect-ratio:1;overflow:hidden;background:#f5f5f5;position:relative">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/o1cn016lpmda1xeeckmwuog_2215991732948-0-cib-af03898813a147f78017477483574119-480-0.webp" alt="Rayo Boreal" style="width:100%;height:100%;object-fit:cover">
-        <span style="position:absolute;top:10px;left:10px;background:#1a1a1a;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;text-transform:uppercase;letter-spacing:.06em">🏃 Trail</span>
+    <!-- Aero Black -->
+    <a href="https://www.salvajeshoes.com.ar/productos/aero-black/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/aero-black-480-0.webp" alt="Aero Black"
+          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+        <div class="prod-img-placeholder" style="display:none">Aero Black®<br>🖤</div>
+        <span class="prod-badge">🏙️ Look urbano</span>
       </div>
-      <div style="padding:18px">
-        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-weight:600">Deportivas · Trail Running</div>
-        <div style="font-size:16px;font-weight:800;margin-bottom:12px;color:#1a1a1a">Rayo Boreal®</div>
-        <div style="background:#e8f8f0;border:1px solid #a8dfc0;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:6px">
-          <span style="background:#27ae60;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;text-transform:uppercase">25% OFF</span>
-          <span style="font-size:15px;font-weight:800;color:#27ae60">$117.000</span>
-        </div>
-        <div style="font-size:12px;color:#888;margin-bottom:3px">Precio normal: $156.000</div>
-        <div style="font-size:12px;color:#666">12 cuotas de $23.088</div>
-        <div style="background:#1a1a1a;color:#fff;padding:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:14px">Ver modelo →</div>
+      <div class="prod-info">
+        <div class="prod-cat">Casual · Unisex</div>
+        <div class="prod-name">Aero Black®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
+        <div class="prod-price-normal">Ver precio en tienda</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
       </div>
     </a>
 
-    <a href="https://www.salvajeshoes.com.ar/productos/casual-wide-black-zapatillas-barefoot-casuales-planas-minimalistas-ergonomicas-negras/" style="border:1px solid #e8e8e8;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#27ae60'" onmouseout="this.style.borderColor='#e8e8e8'">
-      <div style="aspect-ratio:1;overflow:hidden;background:#f5f5f5;position:relative">
-        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/o1cn01jjxa471xeecfjeece_2215991732948-0-cib-8ecb35ed8b9c53024417477483499425-1024-1024.webp" alt="Casual Negra" style="width:100%;height:100%;object-fit:cover">
-        <span style="position:absolute;top:10px;left:10px;background:#1a1a1a;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;text-transform:uppercase;letter-spacing:.06em">👟 Casual</span>
+    <!-- Lavanda -->
+    <a href="https://www.salvajeshoes.com.ar/productos/lavanda/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/portada-2c01cf53d2ca49aff117716986186354-480-0.webp" alt="Lavanda">
+        <span class="prod-badge">⛰️ Alto agarre</span>
       </div>
-      <div style="padding:18px">
-        <div style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-weight:600">Casuales · Día a día</div>
-        <div style="font-size:16px;font-weight:800;margin-bottom:12px;color:#1a1a1a">Casual Negra®</div>
-        <div style="background:#e8f8f0;border:1px solid #a8dfc0;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:6px">
-          <span style="background:#27ae60;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;text-transform:uppercase">25% OFF</span>
-          <span style="font-size:15px;font-weight:800;color:#27ae60">$117.000</span>
-        </div>
-        <div style="font-size:12px;color:#888;margin-bottom:3px">Precio normal: $156.000</div>
-        <div style="font-size:12px;color:#666">12 cuotas de $23.088</div>
-        <div style="background:#1a1a1a;color:#fff;padding:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:14px">Ver modelo →</div>
+      <div class="prod-info">
+        <div class="prod-cat">Deportivas · Mujer</div>
+        <div class="prod-name">Lavanda®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
+        <div class="prod-price-normal">Ver precio en tienda</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
+      </div>
+    </a>
+
+    <!-- Diamante Noche -->
+    <a href="https://www.salvajeshoes.com.ar/productos/diamante-noche/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/diamante-noche-480-0.webp" alt="Diamante Noche"
+          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+        <div class="prod-img-placeholder" style="display:none">Diamante Noche®<br>🌑</div>
+        <span class="prod-badge">⛰️ Alto agarre</span>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Trekking · Unisex</div>
+        <div class="prod-name">Diamante Noche®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
+        <div class="prod-price-normal">Ver precio en tienda</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
+      </div>
+    </a>
+
+    <!-- Aguila Guerrera -->
+    <a href="https://www.salvajeshoes.com.ar/productos/aguila-guerrera-zapatilla-barefoot-pie-descalzo-zero-drop-planas-gimnasio/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/e07928a4-42b8-4e60-be0d-04b9d552ba5b-5b5444d445acb70eb317437886164340-480-0.webp" alt="Aguila Guerrera">
+        <span class="prod-badge">🪶 Ultra liviana</span>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Deportivas · Gimnasio</div>
+        <div class="prod-name">Aguila Guerrera®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">$117.000</span></div>
+        <div class="prod-price-normal">Precio normal: $156.000</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
+      </div>
+    </a>
+
+    <!-- Nube Hielo -->
+    <a href="https://www.salvajeshoes.com.ar/productos/nube-hielo/" class="prod-card">
+      <div class="prod-img">
+        <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/products/nube-hielo-480-0.webp" alt="Nube Hielo"
+          onerror="this.style.display='none';this.nextSibling.style.display='flex'">
+        <div class="prod-img-placeholder" style="display:none">Nube Hielo®<br>❄️</div>
+        <span class="prod-badge">🪶 Ultra liviana</span>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat">Casual · Unisex</div>
+        <div class="prod-name">Nube Hielo®</div>
+        <div class="prod-price-transfer"><span class="ppt-label">25% OFF</span><span class="ppt-price">Transferencia</span></div>
+        <div class="prod-price-normal">Ver precio en tienda</div>
+        <div class="prod-cuotas">Cuotas sin interés</div>
+        <div class="prod-btn">Ver modelo →</div>
       </div>
     </a>
 
   </div>
-
   <div style="text-align:center;margin-top:32px">
-    <a href="https://www.salvajeshoes.com.ar/productos/" style="font-size:14px;color:#27ae60;font-weight:700;text-decoration:underline">Ver todos los modelos disponibles →</a>
+    <a href="https://www.salvajeshoes.com.ar/productos/" style="font-size:14px;color:#4a9972;font-weight:700;text-decoration:underline">Ver todos los modelos disponibles →</a>
+  </div>
+</section>
+
+<!-- 08 FAQ -->
+<section class="edu-section" id="faq" style="background:#fff">
+  <div class="section-eyebrow">08 · Preguntas frecuentes</div>
+  <h2 class="section-h2">TODO LO QUE QUERÉS SABER<br>ANTES DE COMPRAR</h2>
+  <div class="divider-line"></div>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo sé si el talle me va a quedar bien?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Medís tu pie descalzo apoyando el talón contra la pared y marcando la punta del dedo más largo. Ese número en centímetros te da el talle exacto de Salvaje. Tenemos una <a href="https://www.salvajeshoes.com.ar/guia-de-talles/">guía de talles con video</a> que lo explica paso a paso. Y si igual te equivocás — <strong>el cambio es completamente gratis, sin preguntas y sin costo de envío</strong>.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Me va a doler al principio?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Puede haber una adaptación de 1 a 3 semanas, especialmente si siempre usaste calzado con mucha amortiguación. Lo que sentís no es dolor — es el pie activando músculos que estuvieron inactivos durante años. La recomendación es empezar usándolos pocas horas al día e ir aumentando gradualmente. El 96% de nuestros clientes reporta menos dolor a los 60 días.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo usarlos si tengo juanetes o pies planos?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Sí, y de hecho es uno de los usos más frecuentes. La puntera amplia de Salvaje le da espacio al juanete sin comprimirlo — algo que el calzado convencional estrecho no puede hacer. En el caso de pies planos, el calzado barefoot activa los músculos del arco en lugar de sostenerlos artificialmente, lo que con el tiempo puede mejorar la condición.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Son resistentes? ¿Cuánto duran?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>La suela es de caucho de 3.5mm, flexible pero muy resistente al desgaste. Ofrecemos <strong>garantía de suela por 1 año</strong> — única en el mercado. En uso normal cotidiano, un par de Salvaje dura 2 a 3 veces más que una zapatilla convencional de precio similar.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Para qué actividades sirven?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Tenemos modelos específicos para gimnasio y entrenamiento de fuerza, trail running y trekking, caminatas y uso casual diario. La suela plana zero drop los hace especialmente buenos para sentadillas, peso muerto y ejercicios funcionales. Realmente sirven para cualquier tipo de actividad.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto tarda el envío y a dónde llegan?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Enviamos a todo el país. Despachamos en las primeras 24 horas hábiles luego de acreditado el pago. Para CABA y alrededores llega al día siguiente, para el resto del país en promedio en 3 a 7 días hábiles.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo funciona el cambio si no me queda?</span><span class="faq-arrow">↓</span></button><div class="faq-a"><p>Es muy simple. Si el talle no te queda, llenás un formulario muy simple por WhatsApp y te contactan dentro de los 5 días hábiles para coordinar el cambio o devolución. <strong>Todo el proceso es gratis</strong> — ni el envío del cambio ni el retiro tienen costo.</p></div></div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="cf-eyebrow">¿Listo para empezar?</div>
-  <h2>Más de 20.000 argentinos<br>ya cambiaron su calzado.<br><em>¿Y vos?</em></h2>
-  <p>El primer par tiene cambio gratis si no te queda el talle. Envío gratis a todo el país. El único riesgo es no probarlo.</p>
-  <a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green">Elegir mi primer par →</a>
+  <h2>Más de 20.000 personas<br>ya cambiaron su calzado.<br><em>¿Y vos?</em></h2>
+  <p>El primer par tiene cambio gratis si no te queda el talle. El único riesgo es no probarlo.</p>
+  <a href="https://www.salvajeshoes.com.ar/productos/" class="btn-big-green" style="font-size:15px;padding:18px 52px">Elegir mi primer par →</a>
   <div class="trust-pills">
-    <div class="trust-pill"><span class="tp-icon">📦</span>Envío gratis</div>
     <div class="trust-pill"><span class="tp-icon">🔄</span>Cambio gratis</div>
-    <div class="trust-pill"><span class="tp-icon">💳</span>12 cuotas sin interés</div>
+    <div class="trust-pill"><span class="tp-icon">💳</span>Cuotas sin interés</div>
     <div class="trust-pill"><span class="tp-icon">🛡️</span>Garantía suela 1 año</div>
     <div class="trust-pill"><span class="tp-icon">⭐</span>4.8 / 5 · 8.167 reseñas</div>
+    <div class="trust-pill"><span class="tp-icon">🦅</span>Podólogos europeos</div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo">salvaje shoes.</div>
   <div class="footer-links">
@@ -740,44 +621,80 @@ img{display:block;max-width:100%}
   <div class="footer-legal">© 2026 Salvaje Shoes · Todos los derechos reservados</div>
 </footer>
 
-<!-- STICKY BOTTOM -->
-<div class="sticky-bottom">
-  <div class="sb-left">Leíste suficiente. <strong>Es hora de probarlo.</strong> · Envío gratis · Cambio gratis si no te queda</div>
+<!-- STICKY — aparece desde sección mitos -->
+<div class="sticky-bottom" id="sticky">
+  <div class="sb-left">Ya leíste mucho. <strong>Es hora de ir a elegir un par para vos.</strong></div>
   <a href="https://www.salvajeshoes.com.ar/productos/" class="sb-btn">Ver modelos →</a>
 </div>
 
 <script>
-// Progress nav highlight on scroll
-const sections = ['problema','como','resultados','mitos','paraquien','ver-modelos'];
-const items = document.querySelectorAll('.pn-item');
-window.addEventListener('scroll', function(){
-  let current = '';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if(el && window.scrollY >= el.offsetTop - 180) current = id;
-  });
-  items.forEach((item,i) => {
-    item.classList.toggle('active', sections[i] === current);
-  });
-});
+// Progress nav
+const sections=['descalzo','problema','como','resultados','mitos','paraquien','ver-modelos','faq'];
+const navItems=document.querySelectorAll('.pn-item');
+window.addEventListener('scroll',function(){
+  let cur='';
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-200)cur=id;});
+  navItems.forEach((item,i)=>item.classList.toggle('active',sections[i]===cur));
+},{passive:true});
+function scrollTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
-// Smooth scroll from nav
-function scrollTo(id){
-  const el = document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+// FAQ
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const ans=item.querySelector('.faq-a');
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');});
+  if(!isOpen){btn.classList.add('open');ans.classList.add('open');}
 }
 
-// Step highlights on scroll
-const steps = document.querySelectorAll('.como-step');
-window.addEventListener('scroll', function(){
-  const scrollMid = window.scrollY + window.innerHeight / 2;
-  steps.forEach(step => {
-    const rect = step.getBoundingClientRect();
-    const absTop = window.scrollY + rect.top;
-    step.classList.toggle('active', scrollMid > absTop && scrollMid < absTop + rect.height + 60);
-  });
-});
-</script>
+// Como steps
+const steps=document.querySelectorAll('.como-step');
+window.addEventListener('scroll',function(){
+  const mid=window.scrollY+window.innerHeight/2;
+  steps.forEach(step=>{const rect=step.getBoundingClientRect();const absTop=window.scrollY+rect.top;step.classList.toggle('active',mid>absTop&&mid<absTop+rect.height+60);});
+},{passive:true});
 
+// Carousel
+function initCarousel(trackId,dotsId){
+  const track=document.getElementById(trackId);
+  const dotsWrap=document.getElementById(dotsId);
+  if(!track||!dotsWrap) return;
+  function check(){
+    if(window.innerWidth<=960){dotsWrap.style.display='flex';track.addEventListener('scroll',()=>updateDots(track,dotsWrap),{passive:true});}
+    else{dotsWrap.style.display='none';}
+  }
+  check(); window.addEventListener('resize',check);
+}
+function updateDots(track,dotsWrap){
+  const dots=dotsWrap.querySelectorAll('.carousel-dot');
+  const cardWidth=track.firstElementChild?track.firstElementChild.offsetWidth+16:1;
+  const idx=Math.round(track.scrollLeft/cardWidth);
+  dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+}
+function goToSlide(trackId,dotsId,idx){
+  const track=document.getElementById(trackId);if(!track)return;
+  const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
+  setTimeout(()=>updateDots(track,document.getElementById(dotsId)),400);
+}
+function goToMito(idx){
+  const track=document.getElementById('mitos-track');
+  const dotsWrap=document.getElementById('mitos-dots');
+  if(!track)return;
+  const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
+  setTimeout(()=>updateDots(track,dotsWrap),400);
+}
+initCarousel('prob-track','prob-dots');
+initCarousel('mitos-track','mitos-dots');
+
+// Sticky: aparece desde la sección mitos
+const sticky=document.getElementById('sticky');
+const triggerEl=document.getElementById('mitos');
+function checkSticky(){
+  if(!triggerEl||!sticky)return;
+  sticky.classList.toggle('visible',window.scrollY>triggerEl.offsetTop-100);
+}
+window.addEventListener('scroll',checkSticky,{passive:true});
+checkSticky();
+</script>
 </body>
 </html>
