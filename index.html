@@ -20,7 +20,7 @@ img{display:block;max-width:100%}
 .nav a:hover{color:#4a9972}
 .btn-header{background:#4a9972;color:#fff;padding:11px 24px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;transition:background .2s;border-radius:24px}
 .btn-header:hover{background:#3a8060}
-.progress-nav{background:#fafafa;border-bottom:1px solid #efefef;padding:0 60px;display:flex;overflow-x:auto;gap:0;position:sticky;top:73px;z-index:100;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.progress-nav{background:#fafafa;border-bottom:1px solid #efefef;padding:0 60px;display:flex;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .progress-nav::-webkit-scrollbar{display:none}
 .pn-item{padding:15px 22px;font-size:13px;font-weight:600;color:#aaa;white-space:nowrap;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;flex-shrink:0}
 .pn-item:hover{color:#1a1a1a}
@@ -216,7 +216,7 @@ img{display:block;max-width:100%}
   .header{padding:14px 20px}
   .nav{display:none}
   .hero-edu{grid-template-columns:1fr;padding:48px 24px;gap:36px}
-  .progress-nav{top:66px;padding:0 16px}
+  .progress-nav{top:0;padding:0 16px}
   .edu-section{padding:52px 24px}
   .intro-descalzo{padding:48px 24px}
   .intro-desc-grid{grid-template-columns:1fr;gap:28px}
@@ -249,25 +249,6 @@ img{display:block;max-width:100%}
 </style>
 </head>
 <body>
-
-<div class="bar">
-  <span>25% OFF</span> pagando con transferencia bancaria &nbsp;·&nbsp; Cambios gratis si no te queda
-</div>
-
-<header class="header">
-  <a href="https://www.salvajeshoes.com.ar">
-    <img src="https://acdn-us.mitiendanube.com/stores/005/877/397/themes/common/logo-1918409039-1759776123-e64634912a4f5656b8e5e93a9f15bd9c1759776123-480-0.webp"
-      alt="Salvaje Shoes" style="height:46px;width:auto"
-      onerror="this.outerHTML='<span class=\'logo-text\'>salvaje shoes.</span>'">
-  </a>
-  <nav><ul class="nav">
-    <li><a href="https://www.salvajeshoes.com.ar/">Inicio</a></li>
-    <li><a href="https://www.salvajeshoes.com.ar/productos/">Productos</a></li>
-    <li><a href="https://www.salvajeshoes.com.ar/guia-de-talles/">Guía de talles</a></li>
-    <li><a href="https://www.salvajeshoes.com.ar/blog/">Blog</a></li>
-  </ul></nav>
-  <a href="#ver-modelos" class="btn-header">Ver zapatillas →</a>
-</header>
 
 <nav class="progress-nav" id="progress-nav">
   <div class="pn-item active" onclick="scrollTo('descalzo')"><span class="pn-num">01</span>¿Qué es barefoot?</div>
@@ -628,39 +609,63 @@ img{display:block;max-width:100%}
 </div>
 
 <script>
-// Progress nav
+// ── Progress nav — scroll-based, funciona dentro y fuera de iframe ──
 const sections=['descalzo','problema','como','resultados','mitos','paraquien','ver-modelos','faq'];
 const navItems=document.querySelectorAll('.pn-item');
-window.addEventListener('scroll',function(){
-  let cur='';
-  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-200)cur=id;});
-  navItems.forEach((item,i)=>item.classList.toggle('active',sections[i]===cur));
-},{passive:true});
-function scrollTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
-// FAQ
+function updateNav(){
+  const scrollY=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
+  let cur=sections[0];
+  sections.forEach(function(id){
+    const el=document.getElementById(id);
+    if(el && scrollY >= el.offsetTop - 220) cur=id;
+  });
+  navItems.forEach(function(item,i){
+    item.classList.toggle('active', sections[i]===cur);
+  });
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+document.addEventListener('scroll', updateNav, {passive:true});
+document.documentElement.addEventListener('scroll', updateNav, {passive:true});
+updateNav(); // estado inicial
+
+function scrollTo(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── FAQ ──
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const ans=item.querySelector('.faq-a');
   const isOpen=btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');});
+  document.querySelectorAll('.faq-q.open').forEach(function(b){
+    b.classList.remove('open');
+    b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+  });
   if(!isOpen){btn.classList.add('open');ans.classList.add('open');}
 }
 
-// Como steps
-const steps=document.querySelectorAll('.como-step');
-window.addEventListener('scroll',function(){
-  const mid=window.scrollY+window.innerHeight/2;
-  steps.forEach(step=>{const rect=step.getBoundingClientRect();const absTop=window.scrollY+rect.top;step.classList.toggle('active',mid>absTop&&mid<absTop+rect.height+60);});
-},{passive:true});
+// ── Como steps ──
+const comoSteps=document.querySelectorAll('.como-step');
+function updateSteps(){
+  const scrollY=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
+  const mid=scrollY+window.innerHeight/2;
+  comoSteps.forEach(function(step){
+    const top=step.getBoundingClientRect().top+scrollY;
+    step.classList.toggle('active', mid>top && mid<top+step.offsetHeight+60);
+  });
+}
+window.addEventListener('scroll', updateSteps, {passive:true});
+document.addEventListener('scroll', updateSteps, {passive:true});
 
-// Carousel
+// ── Carousel ──
 function initCarousel(trackId,dotsId){
   const track=document.getElementById(trackId);
   const dotsWrap=document.getElementById(dotsId);
   if(!track||!dotsWrap) return;
   function check(){
-    if(window.innerWidth<=960){dotsWrap.style.display='flex';track.addEventListener('scroll',()=>updateDots(track,dotsWrap),{passive:true});}
+    if(window.innerWidth<=960){dotsWrap.style.display='flex';track.addEventListener('scroll',function(){updateDots(track,dotsWrap);},{passive:true});}
     else{dotsWrap.style.display='none';}
   }
   check(); window.addEventListener('resize',check);
@@ -669,32 +674,34 @@ function updateDots(track,dotsWrap){
   const dots=dotsWrap.querySelectorAll('.carousel-dot');
   const cardWidth=track.firstElementChild?track.firstElementChild.offsetWidth+16:1;
   const idx=Math.round(track.scrollLeft/cardWidth);
-  dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+  dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
 }
 function goToSlide(trackId,dotsId,idx){
   const track=document.getElementById(trackId);if(!track)return;
   const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
-  setTimeout(()=>updateDots(track,document.getElementById(dotsId)),400);
+  setTimeout(function(){updateDots(track,document.getElementById(dotsId));},400);
 }
 function goToMito(idx){
   const track=document.getElementById('mitos-track');
   const dotsWrap=document.getElementById('mitos-dots');
   if(!track)return;
   const card=track.children[idx];if(card)track.scrollTo({left:card.offsetLeft,behavior:'smooth'});
-  setTimeout(()=>updateDots(track,dotsWrap),400);
+  setTimeout(function(){updateDots(track,dotsWrap);},400);
 }
 initCarousel('prob-track','prob-dots');
 initCarousel('mitos-track','mitos-dots');
 
-// Sticky: aparece desde la sección mitos
+// ── Sticky — aparece al pasar el hero ──
 const sticky=document.getElementById('sticky');
-const triggerEl=document.getElementById('mitos');
-function checkSticky(){
-  if(!triggerEl||!sticky)return;
-  sticky.classList.toggle('visible',window.scrollY>triggerEl.offsetTop-100);
+const mitosEl=document.getElementById('mitos');
+function updateSticky(){
+  if(!sticky||!mitosEl) return;
+  const scrollY=window.scrollY||window.pageYOffset||document.documentElement.scrollTop||0;
+  sticky.classList.toggle('visible', scrollY > mitosEl.offsetTop - 100);
 }
-window.addEventListener('scroll',checkSticky,{passive:true});
-checkSticky();
+window.addEventListener('scroll', updateSticky, {passive:true});
+document.addEventListener('scroll', updateSticky, {passive:true});
+updateSticky();
 </script>
 </body>
 </html>
